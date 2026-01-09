@@ -350,7 +350,7 @@ body{
   z-index: 2;
 }
 .compose-alternative:hover{
-  transform: scale(1.02);
+  transform: scale(1.15);
   filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
 }
 .compose-alternative:hover .compose-icon-tooltip{
@@ -426,7 +426,6 @@ body{
   z-index: 2;
 }
 .inbox-alternative:hover{
-  transform: scale(1.02);
   filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
 }
 .inbox-alternative:hover .inbox-icon-tooltip{
@@ -502,7 +501,6 @@ body{
   z-index: 2;
 }
 .starred-alternative:hover{
-  transform: scale(1.02);
   filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
 }
 .starred-alternative:hover .starred-icon-tooltip{
@@ -579,7 +577,6 @@ body{
   z-index: 2;
 }
 .snoozed-alternative:hover{
-  transform: scale(1.02);
   filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
 }
 .snoozed-alternative:hover .snoozed-icon-tooltip{
@@ -653,7 +650,6 @@ body{
   z-index: 2;
 }
 .sent-alternative:hover{
-  transform: scale(1.02);
   filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
 }
 .sent-alternative:hover .sent-icon-tooltip{
@@ -729,7 +725,6 @@ body{
   z-index: 2;
 }
 .drafts-alternative:hover{
-  transform: scale(1.02);
   filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
 }
 .drafts-alternative:hover .drafts-icon-tooltip{
@@ -805,7 +800,6 @@ body{
   z-index: 2;
 }
 .purchase-alternative:hover{
-  transform: scale(1.02);
   filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
 }
 .purchase-alternative:hover .purchase-icon-tooltip{
@@ -858,7 +852,6 @@ body{
   z-index: 2;
 }
 .more-arrow-alternative:hover{
-  transform: scale(1.02);
   filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
 }
 .more-arrow-alternative:hover .more-arrow-icon-tooltip{
@@ -909,7 +902,6 @@ body{
   z-index: 2;
 }
 .less-arrow-alternative:hover{
-  transform: scale(1.02);
   filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
 }
 .less-arrow-alternative:hover .less-arrow-icon-tooltip{
