@@ -1,0 +1,206 @@
+body{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+/* BACKGROUND IMAGE */
+  background-image: url(images/background-image.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+nav{
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 5px 5px 10px rgba(245, 245, 245, 0.15);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 2;
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  margin: 20px;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  width: 100%;
+}
+li{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.5s ease;
+}
+li:hover{
+  color: rgb(183, 0, 183);
+}
+article{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+/* The submit button for the form */
+.loginButton{
+  display: flex;
+  justify-content: center;
+  color: rgba(0, 0, 0, 1);
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 10px 200px;
+  width: 100%;
+  max-width: 260px;
+  border-width: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+}
+.loginButton:hover{
+  background-color: rgba(255, 255, 255, 0.803);
+  color: black;
+}
+/* LOGIN BUTTON REMOVE TEXT DECORATION */
+
+.loginButtonAnchor{
+  text-decoration: none;
+  color: black;
+}
+
+.formBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(9px);
+  min-height: 420px;
+  width: 400px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+} 
+.head{
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: 2px;
+} 
+/* FORM ITEMS SECTION */
+#username,
+#password{
+  background: none;
+  color: white;
+  border-radius: 40px;
+  border-color: white;
+  border-width: 1px;
+  border-style: solid;
+  padding: 10px 40px 10px 12px;
+  width: 100%;
+  box-sizing: border-box;
+} 
+#username::placeholder,
+#password::placeholder{
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+/* CODE TO CHANGE BETWEEN FOCUS DECORATIONS */
+#username:focus,
+#password:focus{
+outline: none;
+border: 2px solid rgba(245, 245, 245, 0.15);
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+/* SECOND TEXT IS FOR REMEMBER ME AND FORGOT PASSWORD */
+.checkbox{
+  height: 13px;
+  width: 13px;
+  margin-left: -3px;
+}
+.secondText{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0px 0px 2px;
+  width: 100%;
+}
+.secondText div{
+  color: white;
+  font-size: 10px;
+  margin: 5px;
+}
+.remember{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 5px 5px 0px;;
+  padding-left: 0px;
+}
+.login,
+.password {
+  margin-top: 10px;
+  width: 100%;
+  position: relative;
+}
+
+.login input,
+.password input {
+  width: 100%;
+  display: block;
+}
+
+.loginIcon,
+.passwordIcon {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  height: 18px;
+  width: 18px;
+  opacity: 0.6;
+  transition: opacity 0.25s ease;
+}
+
+/* .loginIcon:hover {
+  opacity: 1;
+}, */
+
+
+.passwordIcon:hover {
+  opacity: 1;
+}
+/* changing the display type from text to password and vice verse */
+.passwordIcon.active {
+  opacity: 0.2;
+} 
+
+

@@ -1,0 +1,917 @@
+body{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  COLOR: white;
+  height: 1000px;
+}
+
+/* TOP BAR STYLES */
+
+.top-bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 5px 5px 10px rgba(245, 245, 245, 0.15);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  background-color: rgb(248, 248, 248);
+  z-index: 1;
+}
+.menu-and-logo-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 200px;
+  margin-right: 20px;
+}
+/* TOP-BAR MENU ICON */
+.menu-icon-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-left: 12px;
+  width:35px;
+  height:35px;
+  background-color: white;
+  border-radius: 100%;
+  transition: filter 0.3s ease;
+}
+.menu-icon-tooltip{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  top:40px;
+  left: 40px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+.menu-icon-container:hover .menu-icon-tooltip{
+  opacity: 1;
+}
+.menu-icon{
+  width: 25px;
+  height: 25px;
+  padding: 5px; 
+  border-radius: 100%;
+  cursor: pointer;
+}
+.menu-icon-container:hover{
+  filter: drop-shadow( 0 0 5px rgba(0, 0, 0, 0.1));
+}
+
+.bluemail-logo-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+}
+
+
+/* TOP-BAR MIDDLE SECTION SEARCH INPUT & ICON */
+
+.top-middle-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 90%;
+}
+
+.top-bar input[type="text"]{
+  width: 100%;
+  min-width: 100px;
+  height: 35px;
+  border: none;
+  border-radius:30px;
+  padding: 5px 40px;
+  font-size: 15px;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.search-icon{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 8px;
+  right:10px;
+  border-radius: 100%;
+  padding: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+.search-icon-tooltip{
+  position: absolute;
+  right:5px;
+  top: 50px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.search-icon:hover + .search-icon-tooltip{
+  opacity: 1;
+}
+.search-icon:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+.search-input:focus{
+  outline: none;
+}
+.search-input::placeholder{
+  color: rgb(189, 189, 189);
+  font-size: 15px;
+}
+.search-input:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.001);
+  cursor: pointer;
+}
+
+
+/* TOP RIGHT SECTION */
+
+.top-right-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-right: 5px;
+  width: 250px;
+}
+.settings-icon{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+  border-radius: 100%;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.settings-icon-tooltip{
+  position: absolute;
+  right: 175px;
+  top: 45px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.settings-icon:hover{
+  transform: rotate(90deg);
+}
+
+.settings-icon:hover + .settings-icon-tooltip{
+  opacity: 1;
+}
+
+.apps-icon{
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+  border-radius: 100%;
+  padding: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+.apps-icon-tooltip{
+  position: absolute;
+  right:123px;
+  top: 45px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.apps-icon:hover + .apps-icon-tooltip{
+  opacity: 1;
+}
+.help-icon{
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+  border-radius: 100%;
+  padding: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+.help-icon-tooltip{
+  position: absolute;
+  right: 70px;
+  top: 45px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.help-icon:hover + .help-icon-tooltip{
+  opacity: 1;
+}
+.profile-icon{
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  margin-right: 5px;
+  border-radius: 100%;
+  padding: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+.profile-icon-tooltip{
+  position: absolute;
+  right:-4px;
+  top: 45px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.profile-icon:hover + .profile-icon-tooltip{
+  opacity: 1;
+}
+
+
+/* NAV FOR LEFT SIDE BAR */
+
+.left-bar{
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 5px 0 10px rgba(245, 245, 245, 0.15);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 65px;
+  left: 0;
+  width: 60px;
+  height: 100vh;
+}
+.compose{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: 100px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 54px;
+}
+/* COMPOSE ALTERNATIVE TEST TO SEE IF WE CAN CHANGE STYLES ON HOVER */
+.compose-alternative{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: 50px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 0px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.compose-alternative .compose-text{
+  display: none;
+}
+.compose-icon{
+  display: flex;
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
+.compose-text{
+  display: flex;
+  width: 100%;
+  margin-left: 40px;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+.compose-icon-tooltip{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 11px;
+  left: 60px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.compose-alternative:hover{
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
+}
+.compose-alternative:hover .compose-icon-tooltip{
+  opacity: 1;
+}
+/* END OF COMPOSE STYLES */
+
+/* INBOX STYLES */
+.inbox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: 100px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 40px;
+}
+/* INBOX ALTERNATIVE TEST TO SEE IF WE CAN CHANGE STYLES ON HOVER */
+.inbox-alternative{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: 50px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 0px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.inbox-alternative .inbox-text{
+  display: none;
+}
+.inbox-icon{
+  display: flex;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.inbox-text{
+  display: flex;
+  width: 100%;
+  margin-left: 40px;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+.inbox-icon-tooltip{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 11px;
+  left: 60px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.inbox-alternative:hover{
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
+}
+.inbox-alternative:hover .inbox-icon-tooltip{
+  opacity: 1;
+}
+
+/* END OF INBOX STYLES */
+/* STARRED STYLES */
+.starred{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: 100px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 46px;
+}
+/* STARRED ALTERNATIVE TEST TO SEE IF WE CAN CHANGE STYLES ON HOVER */
+.starred-alternative{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: 50px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 0px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.starred-alternative .starred-text{
+  display: none;
+} 
+.starred-icon{
+  display: flex;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.starred-text{
+  display: flex;
+  width: 100%;
+  margin-left: 40px;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+.starred-icon-tooltip{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 11px;
+  left: 60px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.starred-alternative:hover{
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
+}
+.starred-alternative:hover .starred-icon-tooltip{
+  opacity: 1;
+}
+
+/* END OF STARRED STYLES */
+/* SNOOZED STYLES */
+
+.snoozed{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: 100px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 52px;
+}
+/* SNOOZED ALTERNATIVE TEST TO SEE IF WE CAN CHANGE STYLES ON HOVER */
+.snoozed-alternative{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: 50px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 0px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.snoozed-alternative .snoozed-text{
+  display: none;
+}
+.snoozed-icon{
+  display: flex;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.snoozed-text{
+  display: flex;
+  width: 100%;
+  margin-left: 40px;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+.snoozed-icon-tooltip{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 11px;
+  left: 60px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.snoozed-alternative:hover{
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
+}
+.snoozed-alternative:hover .snoozed-icon-tooltip{
+  opacity: 1;
+}
+/* END OF SNOOZED STYLES */
+.sent{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: 100px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 37px;
+}
+/* SENT ALTERNATIVE TEST TO SEE IF WE CAN CHANGE STYLES ON HOVER */
+.sent-alternative{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: 50px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 0px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.sent-alternative .sent-text{
+  display: none;
+}
+.sent-icon{
+  display: flex;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.sent-text{
+  display: flex;
+  width: 100%;
+  margin-left: 40px;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+.sent-icon-tooltip{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 11px;
+  left: 60px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.sent-alternative:hover{
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
+}
+.sent-alternative:hover .sent-icon-tooltip{
+  opacity: 1;
+}
+
+/* END OF SENT STYLES */
+/* DRAFTS STYLES  */
+.drafts{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: 100px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 41px;
+}
+/* DRAFTS ALTERNATIVE TEST TO SEE IF WE CAN CHANGE STYLES ON HOVER */
+.drafts-alternative{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: 50px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 0px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.drafts-alternative .drafts-text{
+  display: none;
+}
+.drafts-icon{
+  display: flex;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.drafts-text{
+  display: flex;
+  width: 100%;
+  margin-left: 40px;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+.drafts-icon-tooltip{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 11px;
+  left: 60px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.drafts-alternative:hover{
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
+}
+.drafts-alternative:hover .drafts-icon-tooltip{
+  opacity: 1;
+}
+
+/* END OF DRAFTS STYLES */
+/* PURCHASES STYLES */
+.purchase{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: 100px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 58px;
+}
+/* PURCHASE ALTERNATIVE TEST TO SEE IF WE CAN CHANGE STYLES ON HOVER */
+.purchase-alternative{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: 50px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 0px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.purchase-alternative .purchase-text{
+  display: none;
+}
+.purchase-icon{
+  display: flex;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.purchase-text{
+  display: flex;
+  width: 100%;
+  margin-left: 40px;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+}
+.purchase-icon-tooltip{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 11px;
+  left: 60px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.purchase-alternative:hover{
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
+}
+.purchase-alternative:hover .purchase-icon-tooltip{
+  opacity: 1;
+}
+
+/* END OF PURCHASES STYLES */
+
+/* MORE ARROW SKIP BECAUSE STYLES ARE DIFFERENT*/
+/* MORE-ARROW ALTERNATIVE TEST TO SEE IF WE CAN CHANGE STYLES ON HOVER */
+.more-arrow-alternative{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  /* background-color: #2a91ff; */
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: 20px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 1px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.more-arrow-alternative .more-arrow-text{
+  display: none;
+}
+.more-arrow-icon{
+  display: flex;
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.more-arrow-icon-tooltip{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 11px;
+  left: 60px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.more-arrow-alternative:hover{
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
+}
+.more-arrow-alternative:hover .more-arrow-icon-tooltip{
+  opacity: 1;
+}
+
+/* END OF MORE ARROW STYLES */
+/* LESS ARROW STYLES */
+.less-arrow-alternative{
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  /* background-color: #2a91ff; */
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: 20px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 1px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.less-arrow-alternative .less-arrow-text{
+  display: none;
+}
+.less-arrow-icon{
+  display: flex;
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.less-arrow-icon-tooltip{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 11px;
+  left: 60px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.less-arrow-alternative:hover{
+  transform: scale(1.02);
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
+}
+.less-arrow-alternative:hover .less-arrow-icon-tooltip{
+  opacity: 1;
+}

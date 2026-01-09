@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueMail</title>
+  <link rel="icon" href="../css/images/mailIcon.png">
+  <link rel="stylesheet" href="../css/style2.css">
+</head>
+<body>
+  <h1>BLUEMAIL</h1>
+  <!-- Search bar -->
+  <nav class="top-bar">
+    <div class="menu-and-logo-container">
+      <div class="menu-icon-container">
+        <img class="menu-icon" src="../css/images/icons/menu.svg" alt="Menu">
+        <span class="menu-icon-tooltip">Main menu</span>
+      </div>
+      <div class="bluemail-logo-container">
+        <img src="../css/images/mailIcon.png" width="35px" height="35px">
+      </div>
+    </div>
+ 
+    <div class="top-middle-section">
+      <input class="search-input"type="text" placeholder="Search mail..."/>
+      <img class="search-icon" src="../css/images/icons/search.svg" alt="Search">
+      <span class="search-icon-tooltip">Click to search</span>
+    </div>
+    <div class="top-right-section">
+      <img class="settings-icon" src="../css/images/icons/settings.svg" alt="Settings">
+      <span class="settings-icon-tooltip">Settings</span>
+      <img class="apps-icon" src="../css/images/icons/apps.svg" alt="Apps">
+      <span class="apps-icon-tooltip">Apps</span>
+      <img class="help-icon" src="../css/images/icons/help.svg">
+      <span class="help-icon-tooltip">Help</span>
+      <img class="profile-icon" src="../css/images/profile.png" alt="login">
+      <span class="profile-icon-tooltip">User Profile</span>
+      <article class="profile-info-overlay">
+        <!-- INSERT HTML HERE FOR PROFILE INFORMATION -->
+      </article>
+    </div>    
+  </nav>
+  <!-- LEFT BAR -->
+  <nav class="left-bar">
+    <div class="compose-alternative" id="js-compose" >
+      <img class="compose-icon" src="../css/images/icons/ink_pen.svg">
+      <span class="compose-icon-tooltip">Compose</span>
+      <span class="compose-text">Compose</span>
+    </div>
+
+    <div class="inbox-alternative" id="js-inbox">
+      <img class="inbox-icon" src="../css/images/icons/inbox.svg">
+      <span class="inbox-icon-tooltip">Inbox</span>
+      <span class="inbox-text">Inbox</span>
+    </div>
+    
+    <div class="starred-alternative" id="js-starred">
+      <img class="starred-icon" src="../css/images/icons/star.svg">
+      <span class="starred-icon-tooltip">Starred</span>
+      <span class="starred-text">Starred</span>
+    </div>
+
+    <div class="snoozed-alternative" id="js-snoozed">
+      <img class="snoozed-icon" src="../css/images/icons/nest_clock_farsight_analog.svg">
+      <span class="snoozed-icon-tooltip">Snoozed</span>
+      <span class="snoozed-text">Snoozed</span>
+    </div>
+
+    <div class="sent-alternative" id="js-sent">
+      <img class="sent-icon" src="../css/images/icons/send.svg">
+      <span class="sent-icon-tooltip">Sent</span>
+      <span class="sent-text">Sent</span>
+    </div>
+
+    <div class="drafts-alternative" id="js-drafts">
+      <img class="drafts-icon" src="../css/images/icons/draft.svg">
+      <span class="drafts-icon-tooltip">Drafts</span>
+      <span class="drafts-text">Drafts</span>
+    </div>
+
+    <div class="purchase-alternative" id="js-purchase">
+      <img class="purchase-icon" src="../css/images/icons/local_mall.svg">
+      <span class="purchase-icon-tooltip">Purchases</span>
+      <span class="purchase-text">Purchases</span>
+    </div>
+    <div id="js-arrow-toggle">
+      <div class="more-arrow-alternative" id="js-more-arrow">
+      <img class="more-arrow-icon" src="../css/images/icons/arrow_drop_down.svg">
+      <span class="more-arrow-icon-tooltip">More</span>
+      <span class="more-arrow-text">More</span>
+    </div>
+    <div class="less-arrow-alternative" id="js-less-arrow">
+      <img class="less-arrow-icon" src="../css/images/icons/arrow_drop_up.svg">
+      <span class="less-arrow-icon-tooltip">Less</span>
+      <span class="less-arrow-text">Less</span>
+    </div>
+    </div>
+
+    <!-- DROP DOWN DIV ELEMENT -->
+     <!-- START WITH IMPORTANT -->
+      
+    <div class="drop-down" id="js-drop-down">
+      <div class="important" id="js-important">
+        <img class="important-icon" src="../css/images/icons/label_important.svg">
+        <span class="important-icon-tooltip">Important</span>
+        <span class="important-text">Important</span>
+      </div>
+
+        <img class="scheduled-icon" src="../css/images/icons/schedule_send.svg">
+        <span class="scheduled-icon-tooltip">Scheduled</span>
+        <img class="all-mail-icon" src="../css/images/icons/all_inbox.svg">
+        <span class="all-mail-icon-tooltip">All Mail</span>
+        <img class="spam-icon" src="../css/images/icons/report.svg">
+        <span class="spam-icon-tooltip">Spam</span>
+        <img class="trash-icon" src="../css/images/icons/delete.svg">
+        <span class="trash-icon-tooltip">Trash</span>
+        <img class="manage-subscriptions-icon" src="../css/images/icons/unsubscribe.svg">
+        <span class="manage-subscriptions-icon-tooltip">Manage Subscriptions</span>
+        <img class="settings-icon" src="../css/images/icons/settings.svg">
+        <span class="settings-icon-tooltip">Settings</span>
+        <img class="add-icon" src="../css/images/icons/add.svg">
+        <span class="add-icon-tooltip">Add Account</span>
+    </div>
+  </nav>
+  <nav class="right-bar"></nav>
+
+  <script src="../scripts/function.js"></script>
+  <script src="../scripts/function2.js"></script>
+</body>
+</html>
