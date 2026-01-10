@@ -298,7 +298,12 @@ body{
   padding: 10px;
   position: relative;
   top: 0;
-  left: 54px;
+  left: 58px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.compose:hover{
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
 }
 /* COMPOSE ALTERNATIVE TEST TO SEE IF WE CAN CHANGE STYLES ON HOVER */
 .compose-alternative{
@@ -369,12 +374,12 @@ body{
   cursor: pointer;
   position: relative;
   width: fit-content;
-  height: 100px;
+  height: 15px;
   margin: 10px 0;
   padding: 10px;
   position: relative;
   top: 0;
-  left: 40px;
+  left: 39px;
 }
 /* INBOX ALTERNATIVE TEST TO SEE IF WE CAN CHANGE STYLES ON HOVER */
 .inbox-alternative{
@@ -391,8 +396,9 @@ body{
   margin: 10px 0;
   padding: 10px;
   position: relative;
-  top: 0;
+  top: 0px;
   left: 0px;
+  height: 15px;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 .inbox-alternative .inbox-text{
@@ -401,20 +407,20 @@ body{
 .inbox-icon{
   display: flex;
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 .inbox-text{
   display: flex;
   width: 100%;
   margin-left: 40px;
-  font-size: 16px;
+  font-size: 15px;
   color: rgb(255, 255, 255);
 }
 .inbox-icon-tooltip{
   position: absolute;
   background-color: rgba(0, 0, 0, 0.75);
-  top: 11px;
+  top: 6px;
   left: 60px;
   color: rgb(255, 255, 255);
   padding: 5px 10px;
@@ -444,12 +450,12 @@ body{
   cursor: pointer;
   position: relative;
   width: fit-content;
-  height: 100px;
+  height: 15px;
   margin: 10px 0;
   padding: 10px;
   position: relative;
   top: 0;
-  left: 46px;
+  left: 46.5px;
 }
 /* STARRED ALTERNATIVE TEST TO SEE IF WE CAN CHANGE STYLES ON HOVER */
 .starred-alternative{
@@ -476,8 +482,8 @@ body{
 .starred-icon{
   display: flex;
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 .starred-text{
   display: flex;
@@ -489,7 +495,7 @@ body{
 .starred-icon-tooltip{
   position: absolute;
   background-color: rgba(0, 0, 0, 0.75);
-  top: 11px;
+  top: 6px;
   left: 60px;
   color: rgb(255, 255, 255);
   padding: 5px 10px;
@@ -520,12 +526,12 @@ body{
   cursor: pointer;
   position: relative;
   width: fit-content;
-  height: 100px;
+  height: 15px;
   margin: 10px 0;
   padding: 10px;
   position: relative;
   top: 0;
-  left: 52px;
+  left: 50px;
 }
 /* SNOOZED ALTERNATIVE TEST TO SEE IF WE CAN CHANGE STYLES ON HOVER */
 .snoozed-alternative{
@@ -552,20 +558,20 @@ body{
 .snoozed-icon{
   display: flex;
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 .snoozed-text{
   display: flex;
   width: 100%;
   margin-left: 40px;
-  font-size: 16px;
+  font-size: 15px;
   color: rgb(255, 255, 255);
 }
 .snoozed-icon-tooltip{
   position: absolute;
   background-color: rgba(0, 0, 0, 0.75);
-  top: 11px;
+  top: 6px;
   left: 60px;
   color: rgb(255, 255, 255);
   padding: 5px 10px;
@@ -593,12 +599,12 @@ body{
   cursor: pointer;
   position: relative;
   width: fit-content;
-  height: 100px;
+  height: 15px;
   margin: 10px 0;
   padding: 10px;
   position: relative;
   top: 0;
-  left: 37px;
+  left: 36px;
 }
 /* SENT ALTERNATIVE TEST TO SEE IF WE CAN CHANGE STYLES ON HOVER */
 .sent-alternative{
@@ -625,20 +631,20 @@ body{
 .sent-icon{
   display: flex;
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 .sent-text{
   display: flex;
   width: 100%;
   margin-left: 40px;
-  font-size: 16px;
+  font-size: 15px;
   color: rgb(255, 255, 255);
 }
 .sent-icon-tooltip{
   position: absolute;
   background-color: rgba(0, 0, 0, 0.75);
-  top: 11px;
+  top: 6px;
   left: 60px;
   color: rgb(255, 255, 255);
   padding: 5px 10px;
@@ -668,12 +674,12 @@ body{
   cursor: pointer;
   position: relative;
   width: fit-content;
-  height: 100px;
+  height: 15px;
   margin: 10px 0;
   padding: 10px;
   position: relative;
   top: 0;
-  left: 41px;
+  left: 40px;
 }
 /* DRAFTS ALTERNATIVE TEST TO SEE IF WE CAN CHANGE STYLES ON HOVER */
 .drafts-alternative{
@@ -700,20 +706,20 @@ body{
 .drafts-icon{
   display: flex;
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 .drafts-text{
   display: flex;
   width: 100%;
   margin-left: 40px;
-  font-size: 16px;
+  font-size: 15px;
   color: rgb(255, 255, 255);
 }
 .drafts-icon-tooltip{
   position: absolute;
   background-color: rgba(0, 0, 0, 0.75);
-  top: 11px;
+  top: 6px;
   left: 60px;
   color: rgb(255, 255, 255);
   padding: 5px 10px;
@@ -743,12 +749,12 @@ body{
   cursor: pointer;
   position: relative;
   width: fit-content;
-  height: 100px;
+  height: 15px;
   margin: 10px 0;
   padding: 10px;
   position: relative;
   top: 0;
-  left: 58px;
+  left: 56px;
 }
 /* PURCHASE ALTERNATIVE TEST TO SEE IF WE CAN CHANGE STYLES ON HOVER */
 .purchase-alternative{
@@ -775,20 +781,20 @@ body{
 .purchase-icon{
   display: flex;
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 .purchase-text{
   display: flex;
   width: 100%;
   margin-left: 40px;
-  font-size: 16px;
+  font-size: 15px;
   color: rgb(255, 255, 255);
 }
 .purchase-icon-tooltip{
   position: absolute;
   background-color: rgba(0, 0, 0, 0.75);
-  top: 11px;
+  top: 6px;
   left: 60px;
   color: rgb(255, 255, 255);
   padding: 5px 10px;
@@ -810,58 +816,15 @@ body{
 
 /* MORE ARROW SKIP BECAUSE STYLES ARE DIFFERENT*/
 /* MORE-ARROW ALTERNATIVE TEST TO SEE IF WE CAN CHANGE STYLES ON HOVER */
-.more-arrow-alternative{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  /* background-color: #2a91ff; */
-  border-radius: 10px;
-  cursor: pointer;
-  position: relative;
-  width: fit-content;
-  height: 20px;
-  margin: 10px 0;
-  padding: 10px;
-  position: relative;
-  top: 0;
-  left: 1px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-.more-arrow-alternative .more-arrow-text{
-  display: none;
-}
-.more-arrow-icon{
-  display: flex;
-  position: relative;
-  width: 30px;
-  height: 30px;
-}
-.more-arrow-icon-tooltip{
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.75);
-  top: 11px;
-  left: 60px;
-  color: rgb(255, 255, 255);
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 12px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 2;
-}
-.more-arrow-alternative:hover{
-  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
-}
-.more-arrow-alternative:hover .more-arrow-icon-tooltip{
-  opacity: 1;
+
+.arrow-toggle{
+  transition: height 0.3s ease;
 }
 
 /* END OF MORE ARROW STYLES */
 /* LESS ARROW STYLES */
 .less-arrow-alternative{
-  display: none;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
@@ -871,22 +834,43 @@ body{
   position: relative;
   width: fit-content;
   height: 20px;
-  margin: 10px 0;
   padding: 10px;
   position: relative;
   top: 0;
-  left: 1px;
+  left: 0px;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
+
+.less-arrow-alternative-flipped{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  /* background-color: #2a91ff; */
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  height: 20px;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 0px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
 .less-arrow-alternative .less-arrow-text{
   display: none;
 }
+
 .less-arrow-icon{
   display: flex;
   position: relative;
   width: 30px;
   height: 30px;
+  transition: rotate 0.3s ease;
 }
+
 .less-arrow-icon-tooltip{
   position: absolute;
   background-color: rgba(0, 0, 0, 0.75);
@@ -901,9 +885,276 @@ body{
   transition: opacity 0.3s ease;
   z-index: 2;
 }
+.less-arrow-icon-flipped{
+   display: flex;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  transform: rotate(180deg);
+  transition: rotate 0.3s ease;
+}
+.less-arrow-icon-tooltip-flipped{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 11px;
+  left: 60px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
 .less-arrow-alternative:hover{
   filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
 }
 .less-arrow-alternative:hover .less-arrow-icon-tooltip{
   opacity: 1;
 }
+.less-arrow-alternative-flipped:hover .less-arrow-icon-tooltip-flipped{
+  opacity: 1;
+}
+/* END OF LESS ARROW STYLES */
+/* BEGINNING OF DROP-DOWN STYLES */
+
+.drop-down{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+/* IMPORTANT ALTERNATIVE STYLES */
+.important-alternative{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: 10px;
+  height: 10px;
+  margin: 2.5px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 0px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.important-icon{
+  display: flex;
+  position: relative;
+  width: 12px;
+  height: 12px;
+}
+
+.important-icon-tooltip{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 3px;
+  left: 60px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.important-alternative:hover{
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
+}
+.important-alternative:hover .important-icon-tooltip{
+  opacity: 1;
+}
+
+/* SCHEDULED ICON ALTERNATIVE STYLES */
+.scheduled-icon-alternative{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: 10px;
+  height: 10px;
+  margin: 2.5px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 0px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.scheduled-icon{
+  display: flex;
+  position: relative;
+  width: 12px;
+  height: 12px;
+}
+.scheduled-icon-tooltip{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 2px;
+  left: 60px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.scheduled-icon-alternative:hover{
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
+}
+.scheduled-icon-alternative:hover .scheduled-icon-tooltip{
+  opacity: 1;
+}
+/* ALL MAIL ALTERNATIVE STYLES */
+.all-mail-alternative{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: 10px;
+  height: 10px;
+  margin: 2.5px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 0px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.all-mail-icon{
+  display: flex;
+  position: relative;
+  width: 12px;
+  height: 12px;
+}
+.all-mail-icon-tooltip{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  left: 60px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  width: max-content;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.all-mail-alternative:hover{
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
+}
+.all-mail-alternative:hover .all-mail-icon-tooltip{
+  opacity: 1;
+}
+
+/* SPAM ALTERNATIVE STYLES */
+.spam-alternative{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: 10px;
+  height: 10px;
+  margin: 2.5px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 0px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.spam-icon{
+  display: flex;
+  position: relative;
+  width: 12px;
+  height: 12px;
+}
+.spam-icon-tooltip{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 2px;
+  left: 60px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.spam-alternative:hover{
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
+}
+.spam-alternative:hover .spam-icon-tooltip{
+  opacity: 1;
+}
+
+/* TRASH ALTERNATIVE STYLES */
+.trash-alternative{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a91ff;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  width: 10px;
+  height: 10px;
+  margin: 2.5px 0;
+  padding: 10px;
+  position: relative;
+  top: 0;
+  left: 0px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.trash-icon{
+  display: flex;
+  position: relative;
+  width: 12px;
+  height: 12px;
+}
+.trash-icon-tooltip{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 2px;
+  left: 60px;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.trash-alternative:hover{
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.1));
+}
+.trash-alternative:hover .trash-icon-tooltip{
+  opacity: 1;
+}
+/* END OF DROP-DOWN STYLES */

@@ -67,13 +67,26 @@ purchaseAlternative.addEventListener("click", function(){
   } 
 });
 
+
 // CODE TO TOGGLE MORE AND LESS BUTTONS
-const moreArrow = document.getElementById("js-more-arrow");
 const lessArrow = document.getElementById("js-less-arrow");
 const moreLessContainer = document.getElementById("js-arrow-toggle");
+const flipped = document.getElementById("toggle");
+const displayDropDown = document.getElementById("js-drop-down");
 
 moreLessContainer.addEventListener("click", () => {
   // JUST COME BACK AND START FROM HERE TOMORROW //
+  if(lessArrow.classList.contains("less-arrow-icon")){
+
+    lessArrow.classList.replace("less-arrow-icon", "less-arrow-icon-flipped");
+    flipped.classList.replace("less-arrow-alternative", "less-arrow-alternative-flipped");
+    displayDropDown.style.opacity = "0";
+
+    }
+    else {
+      lessArrow.classList.replace("less-arrow-icon-flipped", "less-arrow-icon");
+      flipped.classList.replace("less-arrow-alternative-flipped", "less-arrow-alternative"); 
+      displayDropDown.style.opacity = "1";}
   })
 
 
