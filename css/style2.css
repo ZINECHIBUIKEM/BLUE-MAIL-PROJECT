@@ -1158,3 +1158,205 @@ body{
   opacity: 1;
 }
 /* END OF DROP-DOWN STYLES */
+
+
+/*                  */
+/* RIGHT BAR STYLES */
+/*                  */
+.right-bar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  position: fixed;
+  top: 65px;
+  right: 0;
+  height: 70vh;
+  width: 60px;
+  border-radius: 0px 0 0 30px;
+}
+
+/* RIGHT BAR TOP SECTION */
+.right-bar-top-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* CALENDER STYLES  */
+.calendar-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 10px 0;
+  cursor: pointer;
+  border-radius: 100%;
+  padding: 2.5px;
+  transition: box-shadow 0.3s ease;
+}
+.calendar-icon{
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  transition: box-shadow 0.3s ease;
+}
+.calendar-icon:hover{
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.363);
+}
+.calendar-icon-tooltip{
+  position: absolute;
+  top: 30px;
+  right: 65px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.calendar-container:hover .calendar-icon-tooltip{
+  opacity: 1;
+}
+.calendar-container:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* END OF CALENDAR STYLES */
+/* DISCOVER TUNE STYLES */
+.discover-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 10px 0;
+  cursor: pointer;
+  border-radius: 100%;
+  padding: 2.5px;
+  transition: box-shadow 0.3s ease;
+}
+.discover-tune-icon{
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  transition: box-shadow 0.3s ease;
+}
+.discover-tune-icon:hover{
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.363);
+}
+.discover-tune-icon-tooltip{
+  position: absolute;
+  top: 90px;
+  right: 65px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.discover-container:hover .discover-tune-icon-tooltip{
+  opacity: 1;
+}
+.discover-container:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* END OF DISCOVER TUNE STYLES */
+/* CONTACTS STYLES */
+.contacts-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 10px 0;
+  cursor: pointer;
+  border-radius: 100%;
+  padding: 2.5px;
+  transition: box-shadow 0.3s ease;
+}
+.contacts-icon{
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  transition: box-shadow 0.3s ease;
+}
+.contacts-icon:hover{
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.363);
+}
+.contacts-icon-tooltip{
+  position: absolute;
+  top: 150px;
+  right: 65px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.contacts-container:hover .contacts-icon-tooltip{
+  opacity: 1;
+}
+.contacts-container:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* END OF CONTACTS STYLES */
+
+
+/* MIDDLE SECTION OF RIGHT BAR */
+.right-bar-middle-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.right-bar-add-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 10px 0;
+  cursor: pointer;
+  border-radius: 100%;
+  padding: 2.5px;
+  transition: box-shadow 0.3s ease;
+}
+.right-bar-add-icon{
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  transition: box-shadow 0.3s ease;
+}
+.right-bar-add-icon:hover{
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.363);
+}
+.right-bar-add-icon-tooltip{
+  position: absolute;
+  bottom: 19px;
+  right: 65px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+.right-bar-add-container:hover .right-bar-add-icon-tooltip{
+  opacity: 1;
+}
+.right-bar-add-container:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* END OF MIDDLE SECTION OF RIGHT BAR */

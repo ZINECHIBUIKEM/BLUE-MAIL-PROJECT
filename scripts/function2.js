@@ -90,13 +90,3 @@ moreLessContainer.addEventListener("click", () => {
   })
 
 
-
-// CODE TO OPEN AND CLOSE TRASH VIEW
-const trashAlternative = document.getElementById("js-trash");
-trashAlternative.addEventListener("click", function(){
-  if(trashAlternative.classList.contains("trash")){
-    trashAlternative.classList.replace("trash", "trash-alternative");
-  }else{
-    trashAlternative.classList.replace("trash-alternative", "trash");
-  }
-});
