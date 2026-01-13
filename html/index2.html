@@ -6,9 +6,9 @@
   <title>BlueMail</title>
   <link rel="icon" href="../css/images/mailIcon.png">
   <link rel="stylesheet" href="../css/style2.css">
+  <link rel="stylesheet" href="../css/style3.css">
 </head>
 <body>
-  <h1>BLUEMAIL</h1>
   <!-- Search bar -->
   <nav class="top-bar">
     <div class="menu-and-logo-container">
@@ -42,6 +42,7 @@
   </nav>
   <!-- LEFT BAR -->
   <nav class="left-bar">
+    <div class="left-bar-top">
     <div class="compose-alternative" id="js-compose" >
       <img class="compose-icon" src="../css/images/icons/ink_pen.svg">
       <span class="compose-icon-tooltip">Compose</span>
@@ -83,7 +84,10 @@
       <span class="purchase-icon-tooltip">Purchases</span>
       <span class="purchase-text">Purchases</span>
     </div>
+    </div>
 
+    <!-- LEFT-BAR-BOTTOM-SECTION -->
+    <div class="left-bar-bottom">
     <div class="arrow-toggle" id="js-arrow-toggle">
 
       <div class="less-arrow-alternative-flipped" id="toggle">
@@ -129,10 +133,11 @@
         <span class="manage-subscriptions-icon-tooltip">Manage Subscriptions</span>
       </div>
 
-      <div class="settings-alternative">
-        <img class="settings-icon" src="../css/images/icons/settings.svg">
-        <span class="settings-icon-tooltip">Settings</span>
+      <div class="settings-drop-alternative">
+        <img class="settings-drop-icon" src="../css/images/icons/settings-drop-down.svg">
+        <span class="settings-drop-icon-tooltip">Settings</span>
         </div>
+    </div>
     </div>
   </nav>
 
@@ -165,10 +170,38 @@
     </div>
   </nav>
 
+<div class="page-selection-section">
+  <div class="left-content">
+    <div class="checkbox-mail" id="js-checkbox-mail">
+      <img class="checkbox-mail-icon" src="../css/images/icons/check_box_outline_blank.svg">
+      <span class="checkbox-mail-icon-tooltip">Select</span>
+    </div>
+    <div class="checkbox-mail-dropdown" id="js-checkbox-mail-dropdown">
+      <img class="checkbox-mail-dropdown-icon" src="../css/images/icons/checkbox_drop_down.svg">
+      <span class="checkbox-mail-dropdown-icon-tooltip">Select</span>
+    </div>
+    <div class="refresh" id="js-refresh">
+      <img class="refresh-icon" src="../css/images/icons/refresh.svg">
+      <span class="refresh-icon-tooltip">Refresh</span>
+    </div>
+    <div class="more-options" id="js-more-options">
+      <img class="more-options-icon" src="../css/images/icons/more_vert.svg">
+      <span class="more-options-icon-tooltip">More options</span>
+    </div>
+  </div>
+
+<!-- RIGHT FLOATING CONTENT -->
+  <div class="right-content">
+    <span class="number-of-mails"></span>
+  </div>
+</div>
   
   <!--                      -->
 <!-- PAGE CONTENTS START HERE -->
   <!--                      -->
+
+
+
 
 
 

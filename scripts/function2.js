@@ -80,13 +80,20 @@ moreLessContainer.addEventListener("click", () => {
 
     lessArrow.classList.replace("less-arrow-icon", "less-arrow-icon-flipped");
     flipped.classList.replace("less-arrow-alternative", "less-arrow-alternative-flipped");
-    displayDropDown.style.opacity = "0";
+    displayDropDown.classList.replace("drop-down-open", "drop-down");
 
     }
     else {
       lessArrow.classList.replace("less-arrow-icon-flipped", "less-arrow-icon");
       flipped.classList.replace("less-arrow-alternative-flipped", "less-arrow-alternative"); 
-      displayDropDown.style.opacity = "1";}
+      displayDropDown.classList.replace("drop-down", "drop-down-open");}
   })
+
+// FUNCTION TO INJECT HTML INTO THE NUMBER OF MAILS SPAN
+setInterval(() => {
+  const numberOfMailsSpan = document.querySelector(".number-of-mails");
+  numberOfMailsSpan.innerHTML = `You have ${parsedUser.emails.length} mails`;
+}, 1000);
+
 
 
