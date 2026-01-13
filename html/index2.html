@@ -34,7 +34,7 @@
       <img class="help-icon" src="../css/images/icons/help.svg">
       <span class="help-icon-tooltip">Help</span>
       <img class="profile-icon" src="../css/images/profile.png" alt="login">
-      <span class="profile-icon-tooltip">User Profile</span>
+      <span class="profile-icon-tooltip"></span>
       <article class="profile-info-overlay">
         <!-- INSERT HTML HERE FOR PROFILE INFORMATION -->
       </article>
@@ -172,8 +172,9 @@
 
 <div class="page-selection-section">
   <div class="left-content">
-    <div class="checkbox-mail" id="js-checkbox-mail">
-      <img class="checkbox-mail-icon" src="../css/images/icons/check_box_outline_blank.svg">
+    <div class="checkbox-mail">
+      <img class="checkbox-mail-icon" id="js-checkbox-mail" src="../css/images/icons/check_box_outline_blank.svg">
+      <img class="checkbox-mail-checked-icon" id="js-checkbox-checked-mail" src="../css/images/icons/check_box.svg">
       <span class="checkbox-mail-icon-tooltip">Select</span>
     </div>
     <div class="checkbox-mail-dropdown" id="js-checkbox-mail-dropdown">
@@ -192,7 +193,7 @@
 
 <!-- RIGHT FLOATING CONTENT -->
   <div class="right-content">
-    <span class="number-of-mails"></span>
+    <span class="number-of-mails" id="js-number-of-mails"></span>
   </div>
 </div>
   

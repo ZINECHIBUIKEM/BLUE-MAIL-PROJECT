@@ -91,9 +91,30 @@ moreLessContainer.addEventListener("click", () => {
 
 // FUNCTION TO INJECT HTML INTO THE NUMBER OF MAILS SPAN
 setInterval(() => {
-  const numberOfMailsSpan = document.querySelector(".number-of-mails");
-  numberOfMailsSpan.innerHTML = `You have ${parsedUser.emails.length} mails`;
+  const newStoredUser = localStorage.getItem("user");
+  const profileUserInfo = JSON.parse(newStoredUser);
+  const numberOfMailsSpan = document.getElementById("js-number-of-mails");
+  numberOfMailsSpan.innerHTML = `You have ${profileUserInfo.Password.length} mails`;
 }, 1000);
 
+// FUNCTION TO INJECT HTML INTO THE PROFILE ICON TOOLTIP
+const newStoredUser = localStorage.getItem("user");
+const profileUserInfo = JSON.parse(newStoredUser);
+const profileInformation = document.querySelector(".profile-icon-tooltip");
+profileInformation.innerHTML = `${profileUserInfo.Username}`;
+
+
+// CODE TO TOGGLE BETWEEN CHECKBOXES
+const checkboxUnchecked = document.getElementById("js-checkbox-mail");
+const checkboxChecked = document.getElementById("js-checkbox-checked-mail");
+checkboxUnchecked.addEventListener("click", () => {
+    checkboxUnchecked.style.display = "none";
+    checkboxChecked.style.display = "flex";
+})
+
+checkboxChecked.addEventListener("click", () => {
+    checkboxChecked.style.display = "none";
+    checkboxUnchecked.style.display = "flex";
+})
 
 
