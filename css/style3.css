@@ -13,13 +13,14 @@
     width: 100%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
     z-index: 2;
+    background: rgb(255, 255, 255);
 }
 
 /* LEFT CONTAINER */
 .left-content {
   display: grid;
   grid-auto-flow: column;
-  gap: 20px;
+  gap: 15px;
   align-items: center;
   width: 20vw;
 }
@@ -31,7 +32,7 @@
     height: 20px;
 }
 .checkbox-mail{
-    margin-left: 100px;
+    margin-left: 70px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -167,11 +168,37 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-right: 120px;
+  margin-right: 75px;
 }
 .number-of-mails{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   font-weight: bold;
   color:rgba(0, 0, 0, 0.6);
+  width: 20vw;
+}
+
+/* MAIL CONTENT SECTION */
+.mail-html{
+  display: grid;
+  grid-template-rows: 30px 1fr;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.mail-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+}
+
+
+/* STYLES FOR THE MAIL CONTENT */
+
+.mailFirstSection{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
