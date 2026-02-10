@@ -1,3 +1,8 @@
+const threeHoursAgo = dayjs().subtract(3, "hours");
+const threeDaysAgo = dayjs().subtract(3, "days");
+
+console.log(threeHoursAgo.format("hh:mm A"));
+
 const storedUser =localStorage.getItem("user");
 const parsedUser = JSON.parse(storedUser);
 console.log(parsedUser);
@@ -94,24 +99,74 @@ moreLessContainer.addEventListener("click", () => {
 
 const mails = [
   {
-    id: 1,
+    id: crypto.randomUUID(),
     sender: "BlueMail",
-    subject: "Security Alert",
-    body: "We noticed a new sign in...",
-    time: "10:45 AM",
+    subject: "Security Alert!",
+    body: "- We noticed a new sign in, click to verify if this was you trying to log in or report this activity so as to not be locked out of your account. If this action was done by you then please ignore this message.",
+    time: "Just now",
     read: true
   },{
-    id: 2,
+    id: crypto.randomUUID(),
     sender: "ZineXpression",
     subject: "New collaboration",
-    body: "Lets talk about your next project...",
-    time: "Yesterday",
+    body: "Lets talk about your next project and how we can work together to make it a success by the year 2027. hopefully we can become the developers we always wanted to become, make our dreams come true one step at aa time.",
+    time: threeHoursAgo.format("hh:mm A"),
+    read: false
+  }, {
+    id: crypto.randomUUID(),
+    sender: "Amazon",
+    subject: "Order Confirmation",
+    body: "Your order has been confirmed and would be shipped soon, please check your order details and make sure to be available for delivery.",
+    time: threeDaysAgo.format("D, MMMM"),
     read: false
   }
 ]
 
 console.log(mails);
 
+// FUNCTION TO DISPLAY MAILS IN THE MAIL
+function displayAllMails() {
+  const mailContaner = document.getElementById("js-mail-view");
+  let mailsHTML = "";
+
+
+  mails.forEach((mail) => {
+
+    mailsHTML +=
+    `
+      <div class="mail-container">
+        <div class="mail-container-left">
+          <img class="mail-container-checkbox-img" src="../css/images/ICONS/check_box_outline_blank.svg">
+          <img class="mail-container-star-img" src="../css/images/ICONS/mail-container-star.svg">
+          <span class="mail-container-sender">${mail.sender}</span>
+        </div>
+
+
+        <!-- MAIL CONTAINER MIDDLE SECTION -->
+        <div class="mail-container-middle">
+          <span class="mail-container-header">
+            ${mail.subject}
+          </span>
+          <span class="mail-container-body">
+            - ${mail.body}
+          </span>
+        </div>
+
+
+        <!-- MAIL CONTAINER RIGHT SECTION -->
+        <div class="mail-container-right">
+          <span class="mail-container-time">
+            ${mail.time}
+          </span>
+        </div>
+      </div>
+    `
+  });
+
+  mailContaner.innerHTML = mailsHTML;
+};
+
+displayAllMails();
 
 // FUNCTION TO INJECT HTML INTO THE NUMBER OF MAILS SPAN
 setInterval(() => {
@@ -140,73 +195,4 @@ checkboxChecked.addEventListener("click", () => {
     checkboxChecked.style.display = "none";
     checkboxUnchecked.style.display = "flex";
 })
-
-
-
-  const mailList = document.getElementById("js-mail-list");
-
-  function renderMails(){
-    mailList.innerHTML = "";
-
-    mails.forEach(mail => {
-      const div =document.createElement("div");
-      div.className = `mail-item ${mail.read ? "" : "unread"}`;
-      div.innerHTML = `
-      <div class="mailFirstSection">
-      <div>${mail.sender}</div>
-      <div>${mail.subject}</div>
-      <div><small>${mail.time}</small></div>
-      </div>`;
-
-      div.addEventListener("click", () => {openMail(mail.id)});
-        mailList.appendChild(div);
-      
-    })
-  }
-
-  renderMails();
-
-  // OPEN A MAIL, ARRAY + FIND
-  const mailView = document.getElementById("js-mail-view");
-
-  function openMail(id){
-    const mail = mails.find(m => m.id ===id);
-
-    mail.read = true;
-
-    mailView.innerHTML = 
-    `<h2>${mail.subject}</h2>
-    <p><strong>From:</strong> ${mail.sender}</p>
-    <p>${mail.body}</p>`;
-
-    renderMails();
-}
-
-// FUNCTION TO DELETE A MAIL
-function openMail(id) {
-  const mail = mails.find(m => m.id === id);
-  mail.read = true;
-
-  mailView.innerHTML = `
-    <h2>${mail.subject}</h2>
-    <p><strong>From:</strong> ${mail.sender}</p>
-    <p>${mail.body}</p>
-    <button onclick="deleteMail(${id})">Delete</button>
-  `;
-
-  renderMails();
-}
-
-function deleteMail(id) {
-  const index = mails.findIndex(m => m.id === id);
-  mails.splice(index, 1);
-
-  mailView.innerHTML = "<p>Select a mail to read</p>";
-  renderMails();
-}
-
-const display = getElementById("js-mail-view");
-display.innerHTML = mails;
-
-
 

@@ -15,7 +15,6 @@ document.querySelector(".passwordIcon").addEventListener("click", () => {
   togglePassword()
 })
 
-
 // CODE FOR THE LOGIN BUTTON
 // document.getElementById("js-login-button").addEventListener("click", () => {});
 
@@ -34,12 +33,13 @@ const LoginInfo = {
   Username: UsernameInfo,
   Password: PasswordInfo
 };
+
+
 // CONVERT OBJECT TO STRING, SAVE IN LOCAL STORAGE AND LOG TO CONSOLE
 localStorage.setItem("user", JSON.stringify(LoginInfo));
 
 // GET ITEM SAVED IN LOCAL STORAGE AND LOG TO CONSOLE
-const storedUser = localStorage.getItem("user");
-JSON.parse(storedUser);
+const storedUser = JSON.parse(localStorage.getItem("user"));
 console.log(storedUser);
 
 });
@@ -50,6 +50,8 @@ SubmitButton.addEventListener('keydown', (event) => {
   if (event.key === "Enter") {
     const UsernameInfo = document.getElementById("username").value;
     const PasswordInfo = document.getElementById("password").value;
+    const loginButton = document.querySelector(".loginButtonAnchor");
+    loginButton.click();
 
     // Object to hold login info 
 
