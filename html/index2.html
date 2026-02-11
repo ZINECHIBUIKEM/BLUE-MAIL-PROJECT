@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BlueMail</title>
+  <title class="website-title">BlueMail</title>
   <link rel="icon" href="../css/images/mailIcon.png">
   <link rel="stylesheet" href="../css/style2.css">
   <link rel="stylesheet" href="../css/style3.css">
@@ -143,7 +143,7 @@
 
   <!-- RIGHT BAR  -->
 
-  <nav class="right-bar">
+  <nav class="right-bar closed">
     <div class="right-bar-top-section">
       <div class="calendar-container">
         <img class="calendar-icon" src="../css/images/icons/calendar_month.svg">
@@ -169,6 +169,11 @@
       </div>
     </div>
   </nav>
+  <div class="open-right-bar-button">
+    <img class="back-arrow-icon" src="../css/images/icons/arrow_back.svg">
+    <span class="open-right-bar-tooltip">Open side panel</span>
+    <span class="close-right-bar-tooltip">Close side panel</span>
+  </div>
 
 <div class="page-selection-section">
   <div class="left-content">
@@ -215,7 +220,9 @@
 
   <!-- <script src="../scripts/function.js"></script> -->
   <script src="https://unpkg.com/dayjs/dayjs.min.js"></script>
-  <script src="../scripts/function2.js"></script>
+    <script type="module" src="../scripts/data/mails.js"></script>
+  <script type="module" src="../scripts/function2.js"></script>
+
 
 </body>
 </html>

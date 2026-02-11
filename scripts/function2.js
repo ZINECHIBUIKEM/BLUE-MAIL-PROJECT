@@ -1,7 +1,6 @@
-const threeHoursAgo = dayjs().subtract(3, "hours");
-const threeDaysAgo = dayjs().subtract(3, "days");
+import {mails} from "./data/mails.js";
 
-console.log(threeHoursAgo.format("hh:mm A"));
+
 
 const storedUser =localStorage.getItem("user");
 const parsedUser = JSON.parse(storedUser);
@@ -92,35 +91,38 @@ moreLessContainer.addEventListener("click", () => {
       lessArrow.classList.replace("less-arrow-icon-flipped", "less-arrow-icon");
       flipped.classList.replace("less-arrow-alternative-flipped", "less-arrow-alternative"); 
       displayDropDown.classList.replace("drop-down", "drop-down-open");}
+  });
+
+
+  // CODE TO TOGGLE BETWEEN OPEN AND CLOSE RIGHT SIDE PANEL
+  const rightBar = document.querySelector(".right-bar");
+
+  const arrowIcon = document.querySelector(".back-arrow-icon");
+
+  const toggleButton = document.querySelector(".open-right-bar-button");
+
+  const closedTooltip = document.querySelector(".open-right-bar-tooltip");
+
+  const openedTooltip = document.querySelector(".close-right-bar-tooltip");
+  toggleButton.addEventListener("click", () => {
+    const isOpen = rightBar.classList.contains("open");
+ 
+
+    rightBar.classList.toggle("open", !isOpen);
+    rightBar.classList.toggle("closed", isOpen);
+
+    arrowIcon.classList.toggle("flipped", !isOpen);
+
+    if(openedTooltip.style.display === "flex"){
+      openedTooltip.style.display = "none";
+      closedTooltip.style.display = "flex";
+    } else {
+      openedTooltip.style.display = "flex";
+      closedTooltip.style.display = "none";
+    };
   })
 
 
-  // MAIL ARRAY SECTION
-
-const mails = [
-  {
-    id: crypto.randomUUID(),
-    sender: "BlueMail",
-    subject: "Security Alert!",
-    body: "- We noticed a new sign in, click to verify if this was you trying to log in or report this activity so as to not be locked out of your account. If this action was done by you then please ignore this message.",
-    time: "Just now",
-    read: true
-  },{
-    id: crypto.randomUUID(),
-    sender: "ZineXpression",
-    subject: "New collaboration",
-    body: "Lets talk about your next project and how we can work together to make it a success by the year 2027. hopefully we can become the developers we always wanted to become, make our dreams come true one step at aa time.",
-    time: threeHoursAgo.format("hh:mm A"),
-    read: false
-  }, {
-    id: crypto.randomUUID(),
-    sender: "Amazon",
-    subject: "Order Confirmation",
-    body: "Your order has been confirmed and would be shipped soon, please check your order details and make sure to be available for delivery.",
-    time: threeDaysAgo.format("D, MMMM"),
-    read: false
-  }
-]
 
 console.log(mails);
 
@@ -129,12 +131,11 @@ function displayAllMails() {
   const mailContaner = document.getElementById("js-mail-view");
   let mailsHTML = "";
 
-
   mails.forEach((mail) => {
 
     mailsHTML +=
     `
-      <div class="mail-container">
+      <div class="mail-container" data-id="${mail.id}">
         <div class="mail-container-left">
           <img class="mail-container-checkbox-img" src="../css/images/ICONS/check_box_outline_blank.svg">
           <img class="mail-container-star-img" src="../css/images/ICONS/mail-container-star.svg">
@@ -155,9 +156,13 @@ function displayAllMails() {
 
         <!-- MAIL CONTAINER RIGHT SECTION -->
         <div class="mail-container-right">
-          <span class="mail-container-time">
-            ${mail.time}
-          </span>
+          <div class="mail-container-delete-div">
+            <img src="../css/images/ICONS/mail-container-delete.svg" class="mail-container-delete-img js-mail-container-delete-img">
+            <span class="mail-container-delete-tooltip">Delete</span>
+              <span class="mail-container-time">
+                ${mail.time}
+              </span>
+            </div>
         </div>
       </div>
     `
@@ -165,14 +170,45 @@ function displayAllMails() {
 
   mailContaner.innerHTML = mailsHTML;
 };
-
+// CALL THE JUST CREATED FUNCTION
 displayAllMails();
+
+
+// FUNCTION TO GET MAIL DATASET.ID DELETE THE MAIL FROM LIST OF ARRAY AND UPDATE THE HTML
+
+function addDeleteButtonsEventListeners() {
+  const deleteButtons = document.querySelectorAll(".js-mail-container-delete-img");
+  deleteButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    deleteMail(button);
+    addDeleteButtonsEventListeners();
+  })
+});
+}
+
+addDeleteButtonsEventListeners();
+
+
+// FUNCTION CREATED TO DELETE SELECTED MAIL
+function deleteMail(button) {
+    const closestMailContainer = button.closest(".mail-container");
+    const mailId = closestMailContainer.dataset.id;
+    const mailIndex = mails.findIndex((mail) => mail.id === mailId);
+    if (mailIndex === -1) return;
+    // CODE TO INJECT mailIndex into .splice method and delete from mails[]
+      mails.splice(mailIndex, 1);
+      displayAllMails();
+}
+
+
 
 // FUNCTION TO INJECT HTML INTO THE NUMBER OF MAILS SPAN
 setInterval(() => {
   const newStoredUser = localStorage.getItem("user");
   const profileUserInfo = JSON.parse(newStoredUser);
   const numberOfMailsSpan = document.getElementById("js-number-of-mails");
+  const titleDom = document.querySelector(".website-title");
+  titleDom.innerHTML = `Inbox (${mails.length})-${profileUserInfo.Username} Bluemail.com`;
   numberOfMailsSpan.innerHTML = `You have ${mails.length} mails`;
 }, 1000);
 
