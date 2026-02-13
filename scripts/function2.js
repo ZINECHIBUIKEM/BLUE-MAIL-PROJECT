@@ -133,12 +133,44 @@ function displayAllMails() {
 
   mails.forEach((mail) => {
 
+    // TERNARY OPERATOR TO CHECK AND SAVE INDEPENDENT INTERACTIVE ELEMENTS
+
+    // TERNARY OPERATION TO CHECK CHECKED OR NOT CHECKED
+    const mailCheck = mail.checked 
+      ? `
+          <img class="mail-container-checked-checkbox-img-rendered    js-mail-container-checked-checkbox-img-rendered" 
+          style="display: flex;"
+          src="../css/images/icons/check_box.svg">
+      ` 
+      : `
+          <img class="mail-container-checkbox-img js-mail-container-checkbox-img" 
+          style="display: flex;"
+          src="../css/images/ICONS/check_box_outline_blank.svg">
+      ` ;
+    // TERNARY OPERATION TO CHECK STARRED OR NOT STARRED
+    const starredCheck = mail.starred
+    ? `
+      <img class="mail-container-star-img-starred" src="../css/images/ICONS/mail-container-star-starred.svg">
+    `
+    : `
+      <img class="mail-container-star-img" src="../css/images/ICONS/mail-container-star.svg">
+    `
+
     mailsHTML +=
     `
       <div class="mail-container" data-id="${mail.id}">
         <div class="mail-container-left">
-          <img class="mail-container-checkbox-img" src="../css/images/ICONS/check_box_outline_blank.svg">
-          <img class="mail-container-star-img" src="../css/images/ICONS/mail-container-star.svg">
+
+          ${mailCheck}
+
+          <span class="mail-container-checkbox-rendered-icon-tooltip">
+            Select
+          </span>
+          
+          
+
+          ${starredCheck}
+
           <span class="mail-container-sender">${mail.sender}</span>
         </div>
 
@@ -169,8 +201,10 @@ function displayAllMails() {
   });
 
   mailContaner.innerHTML = mailsHTML;
+  addAllEventListeners();
 };
-// CALL THE JUST CREATED FUNCTION
+
+// CALL THE JUST CREATED FUNCTION TO DISPLAY ALL MAILS
 displayAllMails();
 
 
@@ -180,13 +214,10 @@ function addDeleteButtonsEventListeners() {
   const deleteButtons = document.querySelectorAll(".js-mail-container-delete-img");
   deleteButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    deleteMail(button);
-    addDeleteButtonsEventListeners();
-  })
+    deleteMail(button)
+  });
 });
 }
-
-addDeleteButtonsEventListeners();
 
 
 // FUNCTION CREATED TO DELETE SELECTED MAIL
@@ -231,4 +262,97 @@ checkboxChecked.addEventListener("click", () => {
     checkboxChecked.style.display = "none";
     checkboxUnchecked.style.display = "flex";
 })
+
+
+
+
+
+
+
+// CODE TO ADDEVENTLISTENERS TO ALL CHECKED AND UNCKECKED CHECKBOXES
+function addCheckBoxEventListeners() {
+
+  const allUncheckedboxesRendered = document.querySelectorAll(".js-mail-container-checkbox-img");
+
+  const allCheckedboxesRendered = document.querySelectorAll(
+    ".js-mail-container-checked-checkbox-img-rendered"
+  );
+
+allUncheckedboxesRendered.forEach((checkbox) => {
+  checkbox.addEventListener("click", () => {
+    toggleCheckboxesInMailContainer(checkbox);
+  });
+});
+
+allCheckedboxesRendered.forEach((checkbox) => {
+  checkbox.addEventListener("click", () => {
+  toggleCheckboxesInMailContainer(checkbox);
+  });
+});
+};
+
+
+// NEW AND IMPROVED FUNCTION TO TOGGLE CHECKBOXES
+
+
+function toggleCheckboxesInMailContainer(checkbox) {
+
+  const closestMailContainer = checkbox.closest(".mail-container");
+
+  const mailId = closestMailContainer.dataset.id;
+
+  const foundMail = mails.find(mail => mail.id === mailId);
+
+  if (!foundMail) return;
+
+  foundMail.checked = !foundMail.checked;
+
+  displayAllMails();
+};
+
+function addStarsEventListeners () {
+  const allStarElements = document.querySelectorAll(".mail-container-star-img");
+
+  const allStarredElements = document.querySelectorAll(".mail-container-star-img-starred");
+
+  allStarElements.forEach((star) => {
+    star.addEventListener("click", () => {
+      toggleStars(star);
+    });
+  });
+
+  allStarredElements.forEach((star) => {
+    star.addEventListener("click", () => {
+      toggleStars(star);
+    });
+  });
+};
+
+
+function toggleStars (star) {
+
+  const starContainer = star.closest(".mail-container");
+
+  const mailId = starContainer.dataset.id;
+
+  const starredMail = mails.find(mail => mail.id === mailId);
+
+  if(!starredMail) return;
+
+  starredMail.starred = !starredMail.starred;
+
+  displayAllMails();
+};
+
+
+// FUNCTION TO ADD ALL EVENT LISTENERS TO ALL BUTTONS
+function addAllEventListeners() {
+  addStarsEventListeners();
+  addCheckBoxEventListeners();
+  addDeleteButtonsEventListeners();
+};
+
+
+ 
+
 
