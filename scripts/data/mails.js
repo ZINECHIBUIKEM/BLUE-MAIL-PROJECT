@@ -2,8 +2,6 @@ const newStoredUser = localStorage.getItem("user");
 const profileUserInfo = JSON.parse(newStoredUser);
 const threeHoursAgo = dayjs().subtract(3, "hours");
 const threeDaysAgo = dayjs().subtract(3, "days");
-
-console.log(threeHoursAgo.format("hh:mm A"));
 // MAIL ARRAY SECTION
 
 export const mails = [

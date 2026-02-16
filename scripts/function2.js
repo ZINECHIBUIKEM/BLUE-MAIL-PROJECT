@@ -6,6 +6,8 @@ const storedUser =localStorage.getItem("user");
 const parsedUser = JSON.parse(storedUser);
 console.log(parsedUser);
 
+
+
 // CODE TO  OPEN AND CLOSE COMPOSE BAR
 const composeAlternative = document.getElementById("js-compose");
 composeAlternative.addEventListener("click", function(){
@@ -122,9 +124,6 @@ moreLessContainer.addEventListener("click", () => {
     };
   })
 
-
-
-console.log(mails);
 
 // FUNCTION TO DISPLAY MAILS IN THE MAIL
 function displayAllMails() {
@@ -248,20 +247,57 @@ const newStoredUser = localStorage.getItem("user");
 const profileUserInfo = JSON.parse(newStoredUser);
 const profileInformation = document.querySelector(".profile-icon-tooltip");
 profileInformation.innerHTML = `${profileUserInfo.Username}`;
+// INJECT SAME INTO OVERLAY
+const testOverlay = document.querySelector(".profile-info-overlay-email");
 
+testOverlay.innerHTML = `
+<div class="profile-info-overlay-email">
+          <!-- INJECT FROM JS -->
+          <span class="profile-info-overlay-email-text">
+          ${profileUserInfo.Username}
+          </span>
+        </div>`
+
+document.querySelector(".profile-icon").addEventListener("click", () => {
+  const overlayDisplay = document.querySelector(".profile-info-overlay");
+
+  if(overlayDisplay.style.display === "flex") {
+    overlayDisplay.style.display = "none"
+  } else {
+    overlayDisplay.style.display = "flex"
+  }
+})
 
 // CODE TO TOGGLE BETWEEN CHECKBOXES
-const checkboxUnchecked = document.getElementById("js-checkbox-mail");
+
+function addMailNavEventListeners() {
+  const checkboxUnchecked = document.getElementById("js-checkbox-mail");
 const checkboxChecked = document.getElementById("js-checkbox-checked-mail");
 checkboxUnchecked.addEventListener("click", () => {
     checkboxUnchecked.style.display = "none";
     checkboxChecked.style.display = "flex";
-})
+
+    mails.forEach((mail) => {
+      mail.checked = true;
+    });
+    addAllEventListeners();
+    displayAllMails();
+    
+});
 
 checkboxChecked.addEventListener("click", () => {
     checkboxChecked.style.display = "none";
     checkboxUnchecked.style.display = "flex";
-})
+
+    mails.forEach((mail) => {
+      mail.checked = false;
+    });
+
+    addAllEventListeners();
+    displayAllMails();
+});
+};
+
 
 
 
@@ -344,12 +380,138 @@ function toggleStars (star) {
   displayAllMails();
 };
 
+// RELOAD PAGE ON CLICK
+const refreshIcon = document.getElementById("js-refresh");
+refreshIcon.addEventListener("click", () => {
+  window.location.reload();
+})
+
+
+// FUNCTIONS TO ENGAGE SEARCHING THROUGH THE ARRAY
+
+
+// FUNCTION TO ADD SEARCHINPUT AND SEARCH BUTTON EVENT LISTENERS
+function addSearchEventListeners(){
+  const searchButton = document.querySelector(".js-search-button");
+  const searchInput = document.querySelector(".js-search-input");
+
+
+  searchButton.addEventListener("click", () => {
+  // Run the function to search through the array
+    searchArray(searchInput);
+});
+
+
+searchInput.addEventListener("input", (event) => {
+  // clearTimeout(timeout);
+
+  const timeout = setTimeout(() => {
+    searchArray(searchInput);
+  }, 300);
+    // Run the function to search through the array
+    
+});
+
+};
+
+// FUNCTION TO LOOP THROUGH THE ARRAY AND CREATE A NEW ARRAY WITH THE INCLUDED KEYWORDS
+function searchArray(searchInput){
+  const searchValue = searchInput.value.toLowerCase().trim();
+  const searchResults = mails.filter(mail => mail.body.toLowerCase().includes(searchValue));
+
+  // DISPLAY THE SEARCH RESULTS ON THE PAGE
+  displaySearchResults(searchResults);
+}
+
+
+function displaySearchResults(searchResults) {
+  const mailContaner = document.getElementById("js-mail-view");
+  let mailsHTML = "";
+
+  searchResults.forEach((searchResult) => {
+
+    // TERNARY OPERATOR TO CHECK AND SAVE INDEPENDENT INTERACTIVE ELEMENTS
+
+    // TERNARY OPERATION TO CHECK CHECKED OR NOT CHECKED
+    const searchResultCheck = searchResult.checked 
+      ? `
+          <img class="mail-container-checked-checkbox-img-rendered    js-mail-container-checked-checkbox-img-rendered" 
+          style="display: flex;"
+          src="../css/images/icons/check_box.svg">
+      ` 
+      : `
+          <img class="mail-container-checkbox-img js-mail-container-checkbox-img" 
+          style="display: flex;"
+          src="../css/images/ICONS/check_box_outline_blank.svg">
+      ` ;
+    // TERNARY OPERATION TO CHECK STARRED OR NOT STARRED
+    const searchResultstarredCheck = searchResult.starred
+    ? `
+      <img class="mail-container-star-img-starred" src="../css/images/ICONS/mail-container-star-starred.svg">
+    `
+    : `
+      <img class="mail-container-star-img" src="../css/images/ICONS/mail-container-star.svg">
+    `
+
+    mailsHTML +=
+    `
+      <div class="mail-container" data-id="${searchResult.id}">
+        <div class="mail-container-left">
+
+          ${searchResultCheck}
+
+          <span class="mail-container-checkbox-rendered-icon-tooltip">
+            Select
+          </span>
+          
+          
+
+          ${searchResultstarredCheck}
+
+          <span class="mail-container-sender">${searchResult.sender}</span>
+        </div>
+
+
+        <!-- MAIL CONTAINER MIDDLE SECTION -->
+        <div class="mail-container-middle">
+          <span class="mail-container-header">
+            ${searchResult.subject}
+          </span>
+          <span class="mail-container-body">
+            - ${searchResult.body}
+          </span>
+        </div>
+
+
+        <!-- MAIL CONTAINER RIGHT SECTION -->
+        <div class="mail-container-right">
+          <div class="mail-container-delete-div">
+            <img src="../css/images/ICONS/mail-container-delete.svg" class="mail-container-delete-img js-mail-container-delete-img">
+            <span class="mail-container-delete-tooltip">Delete</span>
+              <span class="mail-container-time">
+                ${searchResult.time}
+              </span>
+            </div>
+        </div>
+      </div>
+    `
+  });
+
+  mailContaner.innerHTML = mailsHTML;
+  addAllEventListeners();
+};
+
+
+
+
 
 // FUNCTION TO ADD ALL EVENT LISTENERS TO ALL BUTTONS
 function addAllEventListeners() {
   addStarsEventListeners();
   addCheckBoxEventListeners();
   addDeleteButtonsEventListeners();
+  addMailNavEventListeners();
+  addSearchEventListeners();
 };
 
 

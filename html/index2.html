@@ -22,8 +22,8 @@
     </div>
  
     <div class="top-middle-section">
-      <input class="search-input"type="text" placeholder="Search mail..."/>
-      <img class="search-icon" src="../css/images/icons/search.svg" alt="Search">
+      <input class="search-input js-search-input" type="text" placeholder="Search mail..."/>
+      <img class="search-icon js-search-button" src="../css/images/icons/search.svg" alt="Search">
       <span class="search-icon-tooltip">Click to search</span>
     </div>
     <div class="top-right-section">
@@ -37,12 +37,24 @@
       <span class="profile-icon-tooltip"></span>
       <div class="profile-info-overlay">
         <!-- INSERT HTML HERE FOR PROFILE INFORMATION -->
-        <div class="profile-info-overlay-content">
-          bluemail
+        <div class="profile-info-overlay-email">
+          <!-- INJECT FROM JS -->
         </div>
-        <div>
-          profile
+        <div class="profile-info-overlay-dp">
+          <img height="150px" width="150px" src="../css/images/profile.png">
         </div>
+        <span class="profile-info-overlay-text">
+          Hello User! 
+        </span>
+        <h6>
+          This is only a test program so we are all blue
+        </h6>
+        <a class="profile-overlay-anchor-tag" href="index.html">
+          <button class="manage-your-account-button">
+          Sign out
+        </button>
+        </a>
+        
       </div>
     </div>    
   </nav>
