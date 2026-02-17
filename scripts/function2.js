@@ -447,10 +447,12 @@ function displaySearchResults(searchResults) {
     // TERNARY OPERATION TO CHECK STARRED OR NOT STARRED
     const searchResultstarredCheck = searchResult.starred
     ? `
-      <img class="mail-container-star-img-starred" src="../css/images/ICONS/mail-container-star-starred.svg">
+      <img class="" src="../css/images/ICONS/mail-container-star-starred.svg">
+      <span class="unstar-icon-tooltip">Un-Star</span>
     `
     : `
       <img class="mail-container-star-img" src="../css/images/ICONS/mail-container-star.svg">
+      <span class="star-icon-tooltip">Star</span>
     `
 
     mailsHTML +=
@@ -499,6 +501,9 @@ function displaySearchResults(searchResults) {
 
   mailContaner.innerHTML = mailsHTML;
   addAllEventListeners();
+
+  // SET MAIL TO LOCAL STORAGE
+  localStorage.setItem("mails", JSON.stringify(mails));
 };
 
 
@@ -515,6 +520,21 @@ function addAllEventListeners() {
 };
 
 
+// FUNCTION TO ADD EVENT LISTENER TO ALL MAILS
+const allMails = document.querySelectorAll(".mail-container");
+
+allMails.forEach((mailPaper) => {
+  mailPaper.addEventListener("click", () => {
+    const mailDataId = mailPaper.dataset.id;
+    const foundMail = mails.find(mail => mail.id === mailDataId);
+
+    localStorage.setItem("mail", JSON.stringify(foundMail));
+    console.log(foundMail);
+
+    window.location.href = ".././html/index4.html";
+  })
+})
+// FUNCTION TO FINALLY OPEN CLICKED MAIL
  
 
 

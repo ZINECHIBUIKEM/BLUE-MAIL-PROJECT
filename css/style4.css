@@ -1,0 +1,141 @@
+.left-content-mail-top {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  align-items: center;
+  margin-left: 95px;
+  flex-shrink: 0;
+}
+.back-button-tooltip{
+  position: absolute;
+  top: 40px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.back-button-container:hover .back-button-tooltip{
+  opacity: 1;
+}
+.star-icon-tooltip{
+  position: absolute;
+  top: 40px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.star-icon-container:hover .star-icon-tooltip{
+  opacity: 1;
+}
+.star-icon-container:hover .unstar-icon-tooltip{
+  opacity: 1;
+}
+.back-button-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mail-container-back-button-icon{
+  height: 17px;
+  width: 17px;
+  opacity: 0.15;
+}
+.mail-container-back-button-icon:hover {
+  opacity: 0.47;
+}
+
+.star-icon-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.mail-delete-img{
+  opacity: 1;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border-radius: 100%;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.mail-delete-img:hover{
+  transform: scale(1.1);
+}
+
+.mail-delete-img:hover + .mail-container-delete-tooltip{
+  opacity: 1;
+}
+.mail-container-star-img:hover{
+  opacity: 1;
+}
+.mail-body-container{
+  text-align: justify;
+  line-height: 25px;
+}
+.myself{
+  display: flex;
+  flex-direction: column;
+  line-height: 25px;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+strong{
+  margin-top: 20px;
+}
+
+.mail-subject-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+}
+.email-and-time-div{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* STYLES FOR VIDEO */
+.Video-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left:20px;
+  padding-right: 20px;
+  width: 100%;
+}
+.video-wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 40px;
+}
+.Video{
+  border-radius: 15px;
+  transition: filter 0.2s ease-in;
+}
+.video-2{
+  border-radius: 10px;
+}
+.video-container-2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 20px;
+}

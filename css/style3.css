@@ -22,7 +22,7 @@
   flex-direction: row;
   gap: 15px;
   align-items: center;
-  width: 20vw;
+  width: 100vw;
   flex-shrink: 0;
 }
 
@@ -131,6 +131,10 @@
     width: 20px;
     height: 20px;
     transition: transform 0.5s ease;
+    opacity: 0.35;
+}
+.refresh-icon:hover {
+  opacity: 1;
 }
 .refresh-icon:active{
     transform: rotate(180deg);
@@ -167,6 +171,10 @@
 }
 
 /* PAGE-SELECTION-SECTION RIGHT SIDE */
+.page-selection-section{
+  display: flex;
+  flex-direction: row;
+}
 .right-content{
   display: flex;
   flex-direction: row;
@@ -403,5 +411,46 @@
   opacity: 1;
   transition: opacity 0.3s ease;
 }
-
+.star-icon-tooltip{
+    position: absolute;
+  top: 40px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.mail-container-star-img:hover + .star-icon-tooltip{
+  opacity: 1;
+}
+.unstar-icon-tooltip{
+  position: absolute;
+  top: 40px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.mail-container-star-img-starred:hover + .unstar-icon-tooltip{
+  opacity: 1;
+}
+.star-icon-tooltip{
+  position: absolute;
+  top: 40px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
 
