@@ -373,37 +373,37 @@ refreshIcon.addEventListener("click", () => {
 
 
 // FUNCTION TO ADD SEARCHINPUT AND SEARCH BUTTON EVENT LISTENERS
-function addSearchEventListeners(){
-  const searchButton = document.querySelector(".js-search-button");
-  const searchInput = document.querySelector(".js-search-input");
+// function addSearchEventListeners(){
+//   const searchButton = document.querySelector(".js-search-button");
+//   const searchInput = document.querySelector(".js-search-input");
 
 
-  searchButton.addEventListener("click", () => {
-  // Run the function to search through the array
-    searchArray(searchInput);
-});
+//   searchButton.addEventListener("click", () => {
+//   // Run the function to search through the array
+//     searchArray(searchInput);
+// });
 
 
-searchInput.addEventListener("input", (event) => {
-  // clearTimeout(timeout);
+// searchInput.addEventListener("input", (event) => {
+//   // clearTimeout(timeout);
 
-  const timeout = setTimeout(() => {
-    searchArray(searchInput);
-  }, 300);
-    // Run the function to search through the array
+//   const timeout = setTimeout(() => {
+//     searchArray(searchInput);
+//   }, 300);
+//     // Run the function to search through the array
     
-});
+// });
 
-};
+// };
 
 // FUNCTION TO LOOP THROUGH THE ARRAY AND CREATE A NEW ARRAY WITH THE INCLUDED KEYWORDS
-function searchArray(searchInput){
-  const searchValue = searchInput.value.toLowerCase().trim();
-  const searchResults = mails.filter(mail => mail.body.toLowerCase().includes(searchValue));
+// function searchArray(searchInput){
+//   const searchValue = searchInput.value.toLowerCase().trim();
+//   const searchResults = mails.filter(mail => mail.body.toLowerCase().includes(searchValue));
 
-  // DISPLAY THE SEARCH RESULTS ON THE PAGE
-  displaySearchResults(searchResults);
-}
+//   // DISPLAY THE SEARCH RESULTS ON THE PAGE
+//   displaySearchResults(searchResults);
+// }
 
 
 // function displaySearchResults(searchResults) {
@@ -505,21 +505,21 @@ function searchArray(searchInput){
 
 
 function openMail() {
-  // const starIconContainer = document.querySelector(".star-icon-container");
+  const starIconContainer = document.querySelector(".star-icon-container");
 
-  // starIconContainer.innerHTML = mailToBeOpened.starred
-  // ? `
-  // <div class="star-id-container" data-id="${mailToBeOpened.id}">
-  //   <img class="mail-container-star-img-starred" src="../css/images/ICONS/mail-container-star-starred.svg">
-  //   <span class="unstar-icon-tooltip">Unstar</span>
-  // </div>
-  // `
-  // :`
-  // <div class="star-id-container" data-id="${mailToBeOpened.id}">
-  //   <img class="mail-container-star-img" src="../css/images/icons/mail-container-star.svg">
-  //   <span class="star-icon-tooltip">Star</span>
-  // </div>
-  // `
+  starIconContainer.innerHTML = mailToBeOpened.starred
+  ? `
+  <div class="star-id-container" data-id="${mailToBeOpened.id}">
+    <img class="mail-container-star-img-starred" src="../css/images/ICONS/mail-container-star-starred.svg">
+    <span class="unstar-icon-tooltip">Unstar</span>
+  </div>
+  `
+  :`
+  <div class="star-id-container" data-id="${mailToBeOpened.id}">
+    <img class="mail-container-star-img" src="../css/images/icons/mail-container-star.svg">
+    <span class="star-icon-tooltip">Star</span>
+  </div>
+  `
   const mailContainer = document.querySelector(".mail-paper-page");
 
   let mailPaperPageHTML = "";
@@ -617,7 +617,13 @@ function updateStar() {
 
  mailToBeOpened.starred = !mailToBeOpened.starred;
 
+ const openedMailNow = mails.find(mail => mail.id === mailToBeOpened.id);
+ if(!openedMailNow) return;
+
+ openedMailNow.starred = !openedMailNow.starred;
+
   openMail();
+  saveMails();
 };
 // ADD EVENT LISTENERS FOR ALL
 
@@ -638,13 +644,13 @@ function addBackButtonEventListener(){
 
 function addAllEventListeners(){
   addBackButtonEventListener();
-
   addStarEventListener();
 };
 
-
+function saveMails() {
+  localStorage.setItem("mails", JSON.stringify(mails));
+};
  
-
 
 
 

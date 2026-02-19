@@ -1,7 +1,6 @@
 import {mails} from "./data/mails.js";
 
 
-
 const storedUser =localStorage.getItem("user");
 const parsedUser = JSON.parse(storedUser);
 console.log(parsedUser);
@@ -146,6 +145,18 @@ function displayAllMails() {
           style="display: flex;"
           src="../css/images/ICONS/check_box_outline_blank.svg">
       ` ;
+
+      // TERNARY OPERATOR TO CHECK IF READ OR UNREAD
+
+      const readCheck = mail.read
+       ? 
+       "#FFFFFF"
+        
+       :
+       "#d8ebff69"
+       ;
+
+
     // TERNARY OPERATION TO CHECK STARRED OR NOT STARRED
     const starredCheck = mail.starred
     ? `
@@ -157,7 +168,8 @@ function displayAllMails() {
 
     mailsHTML +=
     `
-      <div class="mail-container" data-id="${mail.id}">
+      <div class="mail-container" style="background-color:${readCheck}"
+       data-id="${mail.id}">
         <div class="mail-container-left">
 
           ${mailCheck}
@@ -201,6 +213,7 @@ function displayAllMails() {
 
   mailContaner.innerHTML = mailsHTML;
   addAllEventListeners();
+  enterMail();
 };
 
 // CALL THE JUST CREATED FUNCTION TO DISPLAY ALL MAILS
@@ -228,6 +241,7 @@ function deleteMail(button) {
     // CODE TO INJECT mailIndex into .splice method and delete from mails[]
       mails.splice(mailIndex, 1);
       displayAllMails();
+      saveMails();
 }
 
 
@@ -432,6 +446,15 @@ function displaySearchResults(searchResults) {
 
     // TERNARY OPERATOR TO CHECK AND SAVE INDEPENDENT INTERACTIVE ELEMENTS
 
+    // TERNARY OPERATOR TO CHECK IF READ
+    const readCheck = searchResult.read
+       ? 
+       "#FFFFFF"
+        
+       :
+       "#d8ebff69"
+       ;
+
     // TERNARY OPERATION TO CHECK CHECKED OR NOT CHECKED
     const searchResultCheck = searchResult.checked 
       ? `
@@ -457,7 +480,8 @@ function displaySearchResults(searchResults) {
 
     mailsHTML +=
     `
-      <div class="mail-container" data-id="${searchResult.id}">
+      <div class="mail-container" style="background-color:${readCheck}"
+      data-id="${searchResult.id}">
         <div class="mail-container-left">
 
           ${searchResultCheck}
@@ -501,9 +525,10 @@ function displaySearchResults(searchResults) {
 
   mailContaner.innerHTML = mailsHTML;
   addAllEventListeners();
+  enterMail();
 
   // SET MAIL TO LOCAL STORAGE
-  localStorage.setItem("mails", JSON.stringify(mails));
+  saveMails();
 };
 
 
@@ -521,20 +546,30 @@ function addAllEventListeners() {
 
 
 // FUNCTION TO ADD EVENT LISTENER TO ALL MAILS
-const allMails = document.querySelectorAll(".mail-container");
 
-allMails.forEach((mailPaper) => {
+function enterMail(){
+  const allMailsTBO = document.querySelectorAll(".mail-container-middle");
+
+allMailsTBO.forEach((mailPaper) => {
   mailPaper.addEventListener("click", () => {
-    const mailDataId = mailPaper.dataset.id;
+    const allMails = mailPaper.closest(".mail-container");
+    const mailDataId = allMails.dataset.id;
     const foundMail = mails.find(mail => mail.id === mailDataId);
 
+    foundMail.read = true;
+    saveMails();
     localStorage.setItem("mail", JSON.stringify(foundMail));
     console.log(foundMail);
 
     window.location.href = ".././html/index4.html";
   })
 })
-// FUNCTION TO FINALLY OPEN CLICKED MAIL
- 
+};
+
+// FUNCTION TO SAVE MAILS AFTER EVERY ACTION
+function saveMails() {
+  localStorage.setItem("mails", JSON.stringify(mails));
+};
+  
 
 

@@ -21,6 +21,41 @@
 .back-button-container:hover .back-button-tooltip{
   opacity: 1;
 }
+
+.refresh{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.refresh-icon-tooltip{
+  position: absolute;
+  top: 30px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.refresh:hover .refresh-icon-tooltip {
+  opacity: 1;
+}
+.refresh-icon-opened-mail{
+    width: 20px;
+    height: 20px;
+    transition: transform 0.5s ease;
+    opacity: 0.35;
+}
+.refresh-icon-opened-mail:hover {
+  opacity: 1;
+}
+.refresh-icon-opened-mail:active{
+    transform: rotate(180deg);
+}
 .star-icon-tooltip{
   position: absolute;
   top: 40px;
@@ -80,12 +115,12 @@
 }
 .mail-body-container{
   text-align: justify;
-  line-height: 25px;
+  line-height: 35px;
 }
 .myself{
   display: flex;
   flex-direction: column;
-  line-height: 25px;
+  line-height: 35px;
   justify-content: center;
   align-items: center;
   text-align: justify;

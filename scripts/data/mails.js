@@ -4,7 +4,9 @@ const threeHoursAgo = dayjs().subtract(3, "hours");
 const threeDaysAgo = dayjs().subtract(3, "days");
 // MAIL ARRAY SECTION
 
-export const mails = [
+const storedMails = JSON.parse(localStorage.getItem("mails"));
+
+export const mails = storedMails || [
   {
     id: crypto.randomUUID(),
     sender: "BlueMail",
@@ -158,5 +160,186 @@ export const mails = [
     read: false,
     checked: false,
     starred: false
-  }
-];
+  }, {
+  id: crypto.randomUUID(),
+  sender: "GitHub",
+  subject: "New pull request assigned to you",
+  body: "You have been assigned to review a new pull request in one of your repositories. Please take a moment to review the proposed changes, leave comments if necessary, and approve or request modifications. Staying active helps maintain project quality and collaboration.",
+  time: dayjs().subtract(20, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Stripe",
+  subject: "Payout processed successfully",
+  body: "Good news! Your recent payout has been successfully processed and should reflect in your bank account shortly. You can review transaction details in your dashboard for a breakdown of fees and net earnings.",
+  time: dayjs().subtract(20, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Zoom",
+  subject: "Meeting reminder",
+  body: "This is a reminder for your upcoming meeting scheduled for tomorrow. Please ensure your microphone and camera are working properly before joining. You can access the meeting link in your calendar invitation.",
+  time: dayjs().subtract(30, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Netflix",
+  subject: "New season now streaming",
+  body: "The latest season of your favorite series is now available to stream. Grab your popcorn and continue watching where you left off. Don’t forget to rate the show after watching!",
+  time: dayjs().subtract(34, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "PayPal",
+  subject: "Payment received",
+  body: "You’ve received a new payment. Log in to your account to view transaction details and manage your funds. If you don’t recognize this payment, contact support immediately.",
+  time: dayjs().subtract(35, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Google Drive",
+  subject: "Storage almost full",
+  body: "Your cloud storage is nearly full. To continue uploading files without interruption, consider deleting unused files or upgrading your storage plan for additional space.",
+  time: dayjs().subtract(36, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Medium",
+  subject: "Stories you might like",
+  body: "Based on your reading history, we’ve curated a list of articles that match your interests. Explore fresh insights from writers across technology, business, and creativity.",
+  time: dayjs().subtract(37, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Coursera",
+  subject: "Continue your course today",
+  body: "You’re making great progress! Resume your course to stay on track with your learning goals. Completing your lessons consistently increases retention and success.",
+  time: dayjs().subtract(38, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Shopify",
+  subject: "New order received",
+  body: "Congratulations! A new order has been placed in your store. Review the order details, prepare the package, and update the tracking information once shipped.",
+  time: dayjs().subtract(38, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Slack",
+  subject: "You were added to a channel",
+  body: "You’ve been added to a new workspace channel. Join the conversation to stay updated on team discussions, announcements, and shared resources.",
+  time: dayjs().subtract(40, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Dropbox",
+  subject: "File shared with you",
+  body: "A new file has been shared with you. Click to view, download, or collaborate in real time. You can also organize it into folders for easier access later.",
+  time: dayjs().subtract(41, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Twitter Ads",
+  subject: "Campaign performance update",
+  body: "Your recent ad campaign has shown improved engagement rates. Review your analytics dashboard to monitor clicks, impressions, and conversions.",
+  time: dayjs().subtract(42, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Apple",
+  subject: "New device sign-in",
+  body: "Your Apple ID was used to sign in on a new device. If this was you, no action is required. If not, please reset your password immediately to secure your account.",
+  time: dayjs().subtract(42, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Discord",
+  subject: "New community event",
+  body: "A new community event has been scheduled in one of your servers. Join fellow members to participate in discussions, games, and networking opportunities.",
+  time: dayjs().subtract(42, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Canva",
+  subject: "Design draft saved",
+  body: "Your recent design has been automatically saved as a draft. You can continue editing, share it with collaborators, or export it in multiple formats.",
+  time: dayjs().subtract(45, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Fiverr",
+  subject: "New message from a client",
+  body: "You’ve received a new message regarding your gig. Respond promptly to maintain your response rate and build stronger relationships with clients.",
+  time: dayjs().subtract(46, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Upwork",
+  subject: "Proposal viewed by client",
+  body: "A client has viewed your proposal. Stay alert for potential interview invitations and ensure your profile highlights your best skills.",
+  time: dayjs().subtract(46, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Spotify",
+  subject: "Your weekly mix is ready",
+  body: "Your personalized weekly mix is now available. Discover new tracks curated based on your listening habits and favorite genres.",
+  time: dayjs().subtract(46, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Notion",
+  subject: "Workspace activity summary",
+  body: "Here’s a summary of recent activity in your workspace. Stay up to date with page edits, comments, and newly shared documents.",
+  time: dayjs().subtract(46, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}, {
+  id: crypto.randomUUID(),
+  sender: "Firebase",
+  subject: "Usage report available",
+  body: "Your latest Firebase usage report is now available. Review your database reads, storage usage, and authentication metrics to optimize performance and reduce costs.",
+  time: dayjs().subtract(50, "days").format("MMMM, D"),
+  read: false,
+  checked: false,
+  starred: false
+}];
+
+

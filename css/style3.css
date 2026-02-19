@@ -33,7 +33,7 @@
     height: 20px;
 }
 .checkbox-mail{
-    margin-left: 70px;
+    margin-left: 65.5px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -131,7 +131,7 @@
     width: 20px;
     height: 20px;
     transition: transform 0.5s ease;
-    opacity: 0.35;
+    opacity: 1;
 }
 .refresh-icon:hover {
   opacity: 1;
@@ -227,6 +227,7 @@
 }
 .mail-container:active{
   background-color: #abd4ff;
+  background-color: whitesmoke;
 }
 
 /* STYLES FOR MAIL-CONTAINER-LEFT */
@@ -292,7 +293,7 @@
   min-width: 20px;
   align-content: center;
   justify-content: flex-start;
-  margin: 0px 10px;
+  margin: 0px 5px;
   width: 100%;
 }
 
@@ -454,3 +455,11 @@
   transition: opacity 0.3s ease;
 }
 
+.star-id-container{
+  display: flex;
+  align-items: center;
+}
+
+/* .mail-container:hover {
+  margin: 1px 0px;
+} */
