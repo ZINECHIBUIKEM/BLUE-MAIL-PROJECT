@@ -141,20 +141,20 @@ moreLessContainer.addEventListener("click", () => {
 //       ? `
 //           <img class="mail-container-checked-checkbox-img-rendered    js-mail-container-checked-checkbox-img-rendered" 
 //           style="display: flex;"
-//           src="../css/images/icons/check_box.svg">
+//           src="css/images/icons/check_box.svg">
 //       ` 
 //       : `
 //           <img class="mail-container-checkbox-img js-mail-container-checkbox-img" 
 //           style="display: flex;"
-//           src="../css/images/ICONS/check_box_outline_blank.svg">
+//           src="css/images/ICONS/check_box_outline_blank.svg">
 //       ` ;
 //     // TERNARY OPERATION TO CHECK STARRED OR NOT STARRED
 //     const starredCheck = mail.starred
 //     ? `
-//       <img class="mail-container-star-img-starred" src="../css/images/ICONS/mail-container-star-starred.svg">
+//       <img class="mail-container-star-img-starred" src="css/images/ICONS/mail-container-star-starred.svg">
 //     `
 //     : `
-//       <img class="mail-container-star-img" src="../css/images/ICONS/mail-container-star.svg">
+//       <img class="mail-container-star-img" src="css/images/ICONS/mail-container-star.svg">
 //     `
 
 //     mailsHTML +=
@@ -190,7 +190,7 @@ moreLessContainer.addEventListener("click", () => {
 //         <!-- MAIL CONTAINER RIGHT SECTION -->
 //         <div class="mail-container-right">
 //           <div class="mail-container-delete-div">
-//             <img src="../css/images/ICONS/mail-container-delete.svg" class="mail-container-delete-img js-mail-container-delete-img">
+//             <img src="css/images/ICONS/mail-container-delete.svg" class="mail-container-delete-img js-mail-container-delete-img">
 //             <span class="mail-container-delete-tooltip">Delete</span>
 //               <span class="mail-container-time">
 //                 ${mail.time}
@@ -419,21 +419,21 @@ refreshIcon.addEventListener("click", () => {
 //       ? `
 //           <img class="mail-container-checked-checkbox-img-rendered    js-mail-container-checked-checkbox-img-rendered" 
 //           style="display: flex;"
-//           src="../css/images/icons/check_box.svg">
+//           src="css/images/icons/check_box.svg">
 //       ` 
 //       : `
 //           <img class="mail-container-checkbox-img js-mail-container-checkbox-img" 
 //           style="display: flex;"
-//           src="../css/images/ICONS/check_box_outline_blank.svg">
+//           src="css/images/ICONS/check_box_outline_blank.svg">
 //       ` ;
 //     // TERNARY OPERATION TO CHECK STARRED OR NOT STARRED
 //     const searchResultstarredCheck = searchResult.starred
 //     ? `
-//       <img class="" src="../css/images/ICONS/mail-container-star-starred.svg">
+//       <img class="" src="css/images/ICONS/mail-container-star-starred.svg">
 //       <span class="unstar-icon-tooltip">Un-Star</span>
 //     `
 //     : `
-//       <img class="mail-container-star-img" src="../css/images/ICONS/mail-container-star.svg">
+//       <img class="mail-container-star-img" src="css/images/ICONS/mail-container-star.svg">
 //       <span class="star-icon-tooltip">Star</span>
 //     `
 
@@ -470,7 +470,7 @@ refreshIcon.addEventListener("click", () => {
 //         <!-- MAIL CONTAINER RIGHT SECTION -->
 //         <div class="mail-container-right">
 //           <div class="mail-container-delete-div">
-//             <img src="../css/images/ICONS/mail-container-delete.svg" class="mail-container-delete-img js-mail-container-delete-img">
+//             <img src="css/images/ICONS/mail-container-delete.svg" class="mail-container-delete-img js-mail-container-delete-img">
 //             <span class="mail-container-delete-tooltip">Delete</span>
 //               <span class="mail-container-time">
 //                 ${searchResult.time}
@@ -510,13 +510,13 @@ function openMail() {
   starIconContainer.innerHTML = mailToBeOpened.starred
   ? `
   <div class="star-id-container" data-id="${mailToBeOpened.id}">
-    <img class="mail-container-star-img-starred" src="../css/images/ICONS/mail-container-star-starred.svg">
+    <img class="mail-container-star-img-starred" src="css/images/ICONS/mail-container-star-starred.svg">
     <span class="unstar-icon-tooltip">Unstar</span>
   </div>
   `
   :`
   <div class="star-id-container" data-id="${mailToBeOpened.id}">
-    <img class="mail-container-star-img" src="../css/images/icons/mail-container-star.svg">
+    <img class="mail-container-star-img" src="css/images/icons/mail-container-star.svg">
     <span class="star-icon-tooltip">Star</span>
   </div>
   `
@@ -528,7 +528,7 @@ function openMail() {
 
   `
   <div class="mail-subject-container">
-      <img width="40px" height="40px" style="display:inline-block;" src="../css/images/profile.png">
+      <img width="40px" height="40px" style="display:inline-block;" src="css/images/profile.png">
       <h1 style="margin: 50px 0px;">
         <!-- SUBJECT FROM JAVASCRIPT -->
         ${mailToBeOpened.subject}
@@ -606,7 +606,7 @@ openMail();
 
 // FUNCTION TO SAVE AND GO BACK TO PREVIOUS PAGE
 function goBack() {
-  window.location.href = ".././html/index2.html";
+  window.location.href = "../index2.html";
 }
 
 // FUNCTION TO UPDATE STAR

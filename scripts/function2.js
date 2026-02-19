@@ -138,12 +138,12 @@ function displayAllMails() {
       ? `
           <img class="mail-container-checked-checkbox-img-rendered    js-mail-container-checked-checkbox-img-rendered" 
           style="display: flex;"
-          src="../css/images/icons/check_box.svg">
+          src="css/images/icons/check_box.svg">
       ` 
       : `
           <img class="mail-container-checkbox-img js-mail-container-checkbox-img" 
           style="display: flex;"
-          src="../css/images/ICONS/check_box_outline_blank.svg">
+          src="css/images/ICONS/check_box_outline_blank.svg">
       ` ;
 
       // TERNARY OPERATOR TO CHECK IF READ OR UNREAD
@@ -160,10 +160,10 @@ function displayAllMails() {
     // TERNARY OPERATION TO CHECK STARRED OR NOT STARRED
     const starredCheck = mail.starred
     ? `
-      <img class="mail-container-star-img-starred" src="../css/images/ICONS/mail-container-star-starred.svg">
+      <img class="mail-container-star-img-starred" src="css/images/ICONS/mail-container-star-starred.svg">
     `
     : `
-      <img class="mail-container-star-img" src="../css/images/ICONS/mail-container-star.svg">
+      <img class="mail-container-star-img" src="css/images/ICONS/mail-container-star.svg">
     `
 
     mailsHTML +=
@@ -200,7 +200,7 @@ function displayAllMails() {
         <!-- MAIL CONTAINER RIGHT SECTION -->
         <div class="mail-container-right">
           <div class="mail-container-delete-div">
-            <img src="../css/images/ICONS/mail-container-delete.svg" class="mail-container-delete-img js-mail-container-delete-img">
+            <img src="css/images/ICONS/mail-container-delete.svg" class="mail-container-delete-img js-mail-container-delete-img">
             <span class="mail-container-delete-tooltip">Delete</span>
               <span class="mail-container-time">
                 ${mail.time}
@@ -460,21 +460,21 @@ function displaySearchResults(searchResults) {
       ? `
           <img class="mail-container-checked-checkbox-img-rendered    js-mail-container-checked-checkbox-img-rendered" 
           style="display: flex;"
-          src="../css/images/icons/check_box.svg">
+          src="css/images/icons/check_box.svg">
       ` 
       : `
           <img class="mail-container-checkbox-img js-mail-container-checkbox-img" 
           style="display: flex;"
-          src="../css/images/ICONS/check_box_outline_blank.svg">
+          src="css/images/ICONS/check_box_outline_blank.svg">
       ` ;
     // TERNARY OPERATION TO CHECK STARRED OR NOT STARRED
     const searchResultstarredCheck = searchResult.starred
     ? `
-      <img class="" src="../css/images/ICONS/mail-container-star-starred.svg">
+      <img class="" src="css/images/ICONS/mail-container-star-starred.svg">
       <span class="unstar-icon-tooltip">Un-Star</span>
     `
     : `
-      <img class="mail-container-star-img" src="../css/images/ICONS/mail-container-star.svg">
+      <img class="mail-container-star-img" src="css/images/ICONS/mail-container-star.svg">
       <span class="star-icon-tooltip">Star</span>
     `
 
@@ -512,7 +512,7 @@ function displaySearchResults(searchResults) {
         <!-- MAIL CONTAINER RIGHT SECTION -->
         <div class="mail-container-right">
           <div class="mail-container-delete-div">
-            <img src="../css/images/ICONS/mail-container-delete.svg" class="mail-container-delete-img js-mail-container-delete-img">
+            <img src="css/images/ICONS/mail-container-delete.svg" class="mail-container-delete-img js-mail-container-delete-img">
             <span class="mail-container-delete-tooltip">Delete</span>
               <span class="mail-container-time">
                 ${searchResult.time}
@@ -561,7 +561,7 @@ allMailsTBO.forEach((mailPaper) => {
     localStorage.setItem("mail", JSON.stringify(foundMail));
     console.log(foundMail);
 
-    window.location.href = ".././html/index4.html";
+    window.location.href = "../index4.html";
   })
 })
 };
