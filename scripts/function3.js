@@ -589,7 +589,7 @@ function openMail() {
 
     <div class="video-wrapper">
       <video class="video" width="500px" autoplay="" loop="" muted="">
-        <source src="../video/minimalist.mp4" type="video/mp4">
+        <source src="css/video/minimalist.mp4" type="video/mp4">
       </video>
     </div>
 
