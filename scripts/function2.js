@@ -566,6 +566,13 @@ allMailsTBO.forEach((mailPaper) => {
 })
 };
 
+// FUNCTION TO OPEN AND CLOSE LEFT BAR
+const menuButton = document.querySelector(".menu-icon");
+menuButton.addEventListener("click", () => {
+  const leftBar = document.querySelector(".left-bar");
+  leftBar.style.display === "none" ? leftBar.style.display = "flex" : leftBar.style.display = "none";
+})
+
 // FUNCTION TO SAVE MAILS AFTER EVERY ACTION
 function saveMails() {
   localStorage.setItem("mails", JSON.stringify(mails));
