@@ -12,17 +12,6 @@
   <title>Bluemail Login</title>
 </head>
 <body>
-  <!-- NAVIGATION BAR -->
-  <!-- 
-   <nav>
-    <ul>
-      <li>Home</li>
-      <li>About</li> 
-      <li>Contact</li>
-      <li>Service</li>
-    </ul>
-  </nav>
-   -->
  
   <!-- WRITEUPS -->
    
@@ -30,16 +19,18 @@
   <form class="form">
     <div class="formBox">
       <div class="head">
-        LOGIN TO BLUEMAIL
+        BLUEMAIL LOGIN
       </div>
 
       <div class="login">
-        <input type="email" id="username" placeholder="username or email">
+        <input type="text" class="login-input-class" id="username" required>
+        <label class="login-label" for="username" >username or email</label>
         <img class="loginIcon" src="./css/images/login.png">
       </div>
 
       <div class="password">
-        <input type="password" id="password" placeholder="Password" required>
+        <input class="password-input-class" type="password" id="password" required>
+        <label for="password" class="password-label">password</label>
         <img class="passwordIcon js-password-icon" src="./css/images/padlock.png">
       </div>
 
@@ -55,12 +46,10 @@
       </div>
       
       <div>
-        <a href="index2.html" class="loginButtonAnchor">
           <button id="js-login-button" class="loginButton 
           js-login-button" type="button">
             Login
           </button>
-        </a>
       </div>
       
     </div>

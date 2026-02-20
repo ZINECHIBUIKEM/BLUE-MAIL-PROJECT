@@ -561,7 +561,7 @@ allMailsTBO.forEach((mailPaper) => {
     localStorage.setItem("mail", JSON.stringify(foundMail));
     console.log(foundMail);
 
-    window.location.href = "index4.html";
+    window.location.href = "index3.html";
   })
 })
 };
