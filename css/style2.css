@@ -29,8 +29,7 @@ body{
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  max-width: 200px;
-  margin-right: 20px;
+  margin-right: 1vw;
 }
 /* TOP-BAR MENU ICON */
 .menu-icon-container{

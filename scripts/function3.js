@@ -126,104 +126,6 @@ moreLessContainer.addEventListener("click", () => {
     };
   })
 
-
-// FUNCTION TO DISPLAY MAILS IN THE MAIL
-// function displayAllMails() {
-//   const mailContaner = document.getElementById("js-mail-view");
-//   let mailsHTML = "";
-
-//   mails.forEach((mail) => {
-
-//     // TERNARY OPERATOR TO CHECK AND SAVE INDEPENDENT INTERACTIVE ELEMENTS
-
-//     // TERNARY OPERATION TO CHECK CHECKED OR NOT CHECKED
-//     const mailCheck = mail.checked 
-//       ? `
-//           <img class="mail-container-checked-checkbox-img-rendered    js-mail-container-checked-checkbox-img-rendered" 
-//           style="display: flex;"
-//           src="css/images/check_box.svg">
-//       ` 
-//       : `
-//           <img class="mail-container-checkbox-img js-mail-container-checkbox-img" 
-//           style="display: flex;"
-//           src="css/images/check_box_outline_blank.svg">
-//       ` ;
-//     // TERNARY OPERATION TO CHECK STARRED OR NOT STARRED
-//     const starredCheck = mail.starred
-//     ? `
-//       <img class="mail-container-star-img-starred" src="css/images/mail-container-star-starred.svg">
-//     `
-//     : `
-//       <img class="mail-container-star-img" src="css/images/mail-container-star.svg">
-//     `
-
-//     mailsHTML +=
-//     `
-//       <div class="mail-container" data-id="${mail.id}">
-//         <div class="mail-container-left">
-
-//           ${mailCheck}
-
-//           <span class="mail-container-checkbox-rendered-icon-tooltip">
-//             Select
-//           </span>
-          
-          
-
-//           ${starredCheck}
-
-//           <span class="mail-container-sender">${mail.sender}</span>
-//         </div>
-
-
-//         <!-- MAIL CONTAINER MIDDLE SECTION -->
-//         <div class="mail-container-middle">
-//           <span class="mail-container-header">
-//             ${mail.subject}
-//           </span>
-//           <span class="mail-container-body">
-//             - ${mail.body}
-//           </span>
-//         </div>
-
-
-//         <!-- MAIL CONTAINER RIGHT SECTION -->
-//         <div class="mail-container-right">
-//           <div class="mail-container-delete-div">
-//             <img src="css/images/mail-container-delete.svg" class="mail-container-delete-img js-mail-container-delete-img">
-//             <span class="mail-container-delete-tooltip">Delete</span>
-//               <span class="mail-container-time">
-//                 ${mail.time}
-//               </span>
-//             </div>
-//         </div>
-//       </div>
-//     `
-//   });
-
-//   mailContaner.innerHTML = mailsHTML;
-//   addAllEventListeners();
-// };
-
-// CALL THE JUST CREATED FUNCTION TO DISPLAY ALL MAILS
-// displayAllMails();
-
-
-// FUNCTION TO GET MAIL DATASET.ID DELETE THE MAIL FROM LIST OF ARRAY AND UPDATE THE HTML
-
-
-
-
-// FUNCTION TO INJECT HTML INTO THE NUMBER OF MAILS SPAN
-// setInterval(() => {
-//   const newStoredUser = localStorage.getItem("user");
-//   const profileUserInfo = JSON.parse(newStoredUser);
-//   const numberOfMailsSpan = document.getElementById("js-number-of-mails");
-//   const titleDom = document.querySelector(".website-title");
-//   titleDom.innerHTML = `Inbox (${mails.length})-${profileUserInfo.Username} Bluemail.com`;
-//   numberOfMailsSpan.innerHTML = `You have ${mails.length} mails`;
-// }, 1000);
-
 // FUNCTION TO INJECT HTML INTO THE PROFILE ICON TOOLTIP
 const newStoredUser = localStorage.getItem("user");
 const profileUserInfo = JSON.parse(newStoredUser);
@@ -588,7 +490,7 @@ function openMail() {
       </article>
 
     <div class="video-wrapper">
-      <video class="video" width="500px" autoplay="" loop="" muted="">
+      <video class="video" width="100%" autoplay="" loop="" muted="">
         <source src="css/video/minimalist.mp4" type="video/mp4">
       </video>
     </div>
@@ -652,6 +554,11 @@ function saveMails() {
 };
  
 
-
+// FUNCTION TO OPEN AND CLOSE LEFT BAR
+const menuButton = document.querySelector(".menu-icon");
+menuButton.addEventListener("click", () => {
+  const leftBar = document.querySelector(".left-bar");
+  leftBar.style.display === "none" ? leftBar.style.display = "flex" : leftBar.style.display = "none";
+})
 
       
