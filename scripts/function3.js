@@ -388,20 +388,6 @@ refreshIcon.addEventListener("click", () => {
 // };
 
 
-
-
-
-// FUNCTION TO ADD ALL EVENT LISTENERS TO ALL BUTTONS
-// function addAllEventListeners() {
-//   addStarsEventListeners();
-//   addCheckBoxEventListeners();
-//   addDeleteButtonsEventListeners();
-//   addMailNavEventListeners();
-//   addSearchEventListeners();
-// };
-
-
-
 // FUNCTION TO DISPLAY CORRECT MAIL IN THE PAPER
 
 
