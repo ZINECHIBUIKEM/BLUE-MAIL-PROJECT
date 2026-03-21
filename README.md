@@ -1,1 +1,1 @@
-Hello, so I though about cloning a Mail application to kickstart my Code journey, Named this project Bluemail, and have been working on it for just over a day.
+Hello, so I though about cloning a Mail application to kickstart my Code journey, Named this project Bluemail, and have been working on it for just over a day. [Edit] finished this Project and I've come to see how Demanding this is right now just Using Vanilla JavaScript, Html & CSS.
